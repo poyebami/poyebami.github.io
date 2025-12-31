@@ -4,11 +4,11 @@
 
 * `Home Directory` is the home directory for the current user
 
-  ```
+  ```console
   /home/prosper # this is my home directory
   ~ # tilde represents the home directory and shortcut
-  cd ~ # this is how you get to the home directory
-  echo $HOME # echos the path of the home directory 
+  $ cd ~ # this is how you get to the home directory
+  $ echo $HOME # echos the path of the home directory 
   ```
 
 <h3>Command and Arguments</h3>
@@ -27,7 +27,7 @@
 
   ```
   echo # echo is a shell built-in # echo is a internal command
-  mv # mv is hashed (/bin/mv) # mv is a a external command
+  mv # mv is hashed (/bin/mv) mv is a a external command
   ```
 
 * `Internal` are part of the shell and built in. There are about 30 commands
