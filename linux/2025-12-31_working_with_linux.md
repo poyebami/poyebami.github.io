@@ -2,11 +2,115 @@
 
 <h3>Home Directory</h3>
 
-* Home Directory is the home directory for the current user
+* `Home Directory` is the home directory for the current user
 
   ```
-  /home/prosper # this is my home directory. 
+  /home/prosper # this is my home directory
   ~ # tilde represents the home directory and shortcut
   cd ~ # this is how you get to the home directory
   echo $HOME # echos the path of the home directory 
+  ```
+
+<h3>Command and Arguments</h3>
+
+* Arguments act like an input
+
+  ```
+  echo "hello world" # hello world is the argument in this command
+  rm -r <folder_name> # folder name is the argument you are providing to delete a folder and everything in it
+  ```
+
+<h3>Commands Type</h3>
+
+* Internal / Built in Command and External Commands
+* To determine if a command is internal or external, use type command
+
+  ```
+  echo # echo is a shell built-in # echo is a internal command
+  mv # mv is hashed (/bin/mv) # mv is a a external command
+  ```
+
+* `Internal` are part of the shell and built in. There are about 30 commands
+* Example of Internal Commands are : 
+ 
+  ```console
+  cd # change directory
+  export # export environment variable
+  mkdir # make directory
+  pwd # print working directory
+  ```
+
+* `External` are bingary programs or scripts
+* External commands must be installed
+
+<h3>Basic Linux Commands</h3>
+
+  ```
+  pwd # present working directory
+
+  ls  # list content in directory
+  ls -l # provides more details about the files and directories
+  ls -a # list all files including hidden
+  ls -lt # list long files in order created
+  ls -ltr # long list files in the perverse order created
+
+  mkdir # makes new directory / multiple directories
+  mkdir -p # creates parent directory if it doesn't exist 
+  mkdir Asia/ # make a directory called Asia
+
+  cd # change directory
+  cd .. # takes you to one directory lower
+  cd . # keep you in current directory
+  cd - # takes you to previous directory 
+  # If I'm in ~/repos/Asia and i moved to ~/Downloads, cd - will take me back to ~/repos/Asia
+
+  pushd # change current working directory to directory specified in argument
+  pushd ~/repos # change working directory to repos
+
+  popd # takes you back to previous working directory
+
+  mv # moves / rename files or directories
+  mv ~/Asia/Japans ~/Asia/Japan # rename file
+  mv ~/Asia/UK ~/Europe/ # move file UK to Europe directory
+  mv ~/Asia ~/Continents # move Asia directory to Continents directory
+
+  cp # copy file
+  cp -r # copy directories
+  cp -r ~/Asia ~/Continents # copies Asia directory to continents and there are now 2 Asia directories
+  cp ~/Asia/Japan ~/Europe/ # copies Japan file from Asia directory
+
+  rm # delete files or directory
+  rm ~/Asia/UK # UK file will be deleted
+  rm -r ~/Asia #Asia directory will be deleted
+  rm -f # will force deletion, -rf will force folder deletion
+
+  cat # contents in the file will be printed
+  cat ~Asia/Japan #content in Japan file will be printed
+
+  touch # create a new file
+  touch <file_name> # can create multiple like mkdir
+
+  more <file_name> # view text files in a scrollable manner
+  less <file_name> # view the content of a gile and navigate through the file
+  
+  whatis <command> # displays a one-line decription of what a command does
+  
+  man <command> # displays even more detail about command, often with examples and use cases
+
+  vi # file editor
+  ```
+  
+<h3> Absolute and Relative Path </h3>
+
+* `Absolute Path` is the location of a file or directory starting from the root directory
+
+  ```
+  cd /home/prosper/Asia
+  
+  ```
+
+* `Relative Path` jumps straight to the directory without writing the whole root directory
+
+  ```
+  cd Japan/ # I'm currently in ~/Asia directory, don't need to specific /home/prosper/Asia/Japan/
   ```
