@@ -14,7 +14,7 @@
 
 <h3>Different vi modes</h3>
 
-* `Normal Mode` # to move around the file using arrow keys and other keys
+* `Normal Mode` to move around the file using arrow keys and other keys
 
    ```console
    # Start in normal mode by default
@@ -30,11 +30,11 @@
    $ Press ESC # when in other modes to return back to normal mode
    ```
 
-* `Command Mode`  # where you can enter commands that performs tasks like writing or quitting 
+* `Command Mode` where you can enter commands that performs tasks like writing or quitting 
    
    ```console
    $ Press : # To go from normal to command mode
-   $ # status bar will be : to notify command mode
+    # status bar will be : to notify command mode
    $ :set # will show you all the vi variables currently in use. Press Enter to exit
    $ :set ruler # to tun on ruler
    $ :set norulter # to turn off ruler
