@@ -16,7 +16,7 @@
 
 * `Normal Mode` # to move around the file using arrow keys and other keys
 
-   ```
+   ```console
    # Start in normal mode by default
    $ Press w # move foward one word
    $ Press b # move backwards one word
@@ -32,7 +32,7 @@
 
 * `Command Mode`  # where you can enter commands that performs tasks like writing or quitting 
    
-   ```
+   ```console
    $ Press : # To go from normal to command mode
    $ # status bar will be : to notify command mode
    $ :set # will show you all the vi variables currently in use. Press Enter to exit
