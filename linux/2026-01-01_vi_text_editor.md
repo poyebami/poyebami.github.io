@@ -47,8 +47,62 @@
    $ :r !lsblk -s # will display all the block device connected to the system such as hard dirves, thumb drives and more
    ```
 
+* `Insert Mode` where you are inserting characters /text into a documents
 
+  ```console
+   $ Press i # enter to insert mode
+   $ # You will see -- INSERT -- at the status bar to let you that you are in insert mode
+   $ Press a # append text after the cursor
+   $ Press o # open a new line below the cursor
+   $ Press r # replace one character at the cursor. <Text> will be <Test>
+   $ Press x # to delete a character that the cursor is on
+   $ <Number>x # delete the number of characters starting from where the character is. <5x> will deelte 5 character starting from the cursor prepend the x with a number of characters to delete
+   $ dw # delete a word from teh cursor
+   $ dd # delete the line where the cursor is
+   $ <Number>dd # delete the number of lines at the cursor. <4dd> will delete 4 lines at teh cursor prepend the dd command with the number of lines to delete.
+  ```
+  ```
+   $ :%s/find_this_repalce_with/g
+   Line range specifier
+   $ % # means to do the operation on all lines
+   $ 1,6 # means to do the operations on lines 1-6
+   $ S # stands for search
+   $ /find_this # for text search
+   $ /repalce_with # for text to substitute with
+   $ / # end the set
+   $ g # optional but its means global substitution and means to do this for every occurrence on a line. Otherwise the substitute will only occur for the first occurrence.
+   $ # the status bar will tell you the <number> of substitutions on <number> of line
 
+   For specific lines
+   $ :4,9s/find_this/replace_with/g
+
+   $ Press u # undo; roll back changes while in normal mode
+   $ # For line ranges there are special characters
+   $ # . for current line indicator
+   $ # $ for the last line indicator
+
+   $ To replace object found with <nothing> //
+   $ :.,$s/HOME// #will place HOME with nothing starting from the current line to the last line
+  ```
+
+* `Replace Mode` where the text you are typing replace the existing text in the document
+
+  ```console
+   $ Press Capital R # enter in replace mode
+
+   YANKING AND PUTTING
+   $ Press y # to yank the line into the paste buffer. This will copy entire line
+   $ Press P # paste contents of paste buffer above the cursor
+   $ Press p $ paste contents of paste buffer below the cursor
+
+   SEARCH AND SUBSTITUTE
+   $ /<name_of_text> # to get into search mode and hitting enter, it will move cursor to where it found the text
+   $ Press n # to find the next occurrence of the search term
+   $ # receive a warning saying "search hit BOTTOM, continuing at TOP"
+   $ ?<name_of_text> # to search backwards
+   $ # press n but going backwards and teh same warning but "TOP, continuing at BOTTOM 
+  ```
+  
 
 
 
