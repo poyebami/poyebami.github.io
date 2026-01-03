@@ -61,7 +61,7 @@
    $ dd # delete the line where the cursor is
    $ <Number>dd # delete the number of lines at the cursor. <4dd> will delete 4 lines at teh cursor prepend the dd command with the number of lines to delete.
   ```
-  ```
+  ```console
    $ :%s/find_this_repalce_with/g
    Line range specifier
    $ % # means to do the operation on all lines
