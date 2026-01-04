@@ -98,6 +98,8 @@
   $ man <command> # displays even more detail about command, often with examples and use cases
 
   $ vi # file editor
+
+  $ clear # clears the visible screen
   ```
   
 <h3> Absolute and Relative Path </h3>
