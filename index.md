@@ -9,7 +9,7 @@
 
 ### Git
 
-- ### Git: Basic
- * [git_index](git_note/2026-01-03_git_for_beginners.md)
+- ### Basic
+    * [git_index](git_note/2026-01-03_git_for_beginners.md)
  
 
