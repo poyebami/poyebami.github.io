@@ -9,6 +9,6 @@
 
 - ### Git
      
-    * [Introduction to GIT](poyebami.github.io/introduction_to_git.md)
+    * [Introduction to GIT](git_note/:introduction_to_git.md)
  
 
