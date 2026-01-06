@@ -8,6 +8,6 @@
   * [2026-01-01_vi_text_editor](linux/2026-01-01_vi_text_editor.md)
 
 - ### Git
-     * [Introduction to GIT](git_note/introduction_to_git.md)
+     * [Introduction to GIT](poyebami.github.io/introduction_to_git.md)
  
 
