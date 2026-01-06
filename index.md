@@ -8,8 +8,7 @@
   * [2026-01-01_vi_text_editor](linux/2026-01-01_vi_text_editor.md)
 
 ### Git
-
-- ### Basic
-    * [git_index](git_note/2026-01-03_git_for_beginners.md)
+-
+    * [Introduction_to_GIT](git_note/2026-01-03_git_for_beginners.md)
  
 
