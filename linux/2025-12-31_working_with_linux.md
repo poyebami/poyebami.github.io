@@ -46,6 +46,8 @@
 <h3>Basic Linux Commands</h3>
 
   ```console
+  $ cat /etc/os-release #identify the ooperation system use
+
   $ pwd # present working directory
 
   $ ls  # list content in directory
