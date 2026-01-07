@@ -4,7 +4,7 @@
 
 - ### Linux Basic
 
-  * [2025-12-31_working_with_linux](linux/2025-12-31_working_with_linux.md)
+  * [Introduction to Linux](linux/01_working_with_linux.md)
 
 - ### Vi
 
