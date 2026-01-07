@@ -11,8 +11,8 @@
    * GIT in short can make me go back in time without losing a new changes.  Can have access to the entire project's history, and the changes made, who made those changes, and when it was made.
 
 * Installing GIT
-
-  * To install GIT, you can download it directly from the offical website or install it using Homebre with command 
+   
+   To install GIT, you can download it directly from the offical website or install it using Homebre with command 
 
    ```console
    $ brew install git
@@ -20,8 +20,6 @@
    The installation process may very dependubg on your operating system, so be sure to look up the appropriate instructions for your system.
 
  * Identify GIT Version
-    
-    * To identify the version of GIT use
     
     ```console
     $ git version
