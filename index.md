@@ -1,8 +1,7 @@
 # Table of Contents
 
 
-   ## Linux
-
+## Linux
    * [Introduction to Linux](linux/introduction_to_linux.md)
   
 
