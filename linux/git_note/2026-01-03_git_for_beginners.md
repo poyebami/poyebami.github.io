@@ -23,7 +23,7 @@
     
     ```console
     $ git version
-    $ git help $ view git commands
+    $ git help # view git commands
     $ git help <command>  # to view a detailed help for any git command
     ```
 <h3>Local Repositories</h3>
