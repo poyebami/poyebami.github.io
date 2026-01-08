@@ -6,9 +6,9 @@
 
 ### GIT
 
-* [Introduction to GIT](git_note/introduction_to_git.md)
+* [2026-01-01 VI Editor](vi_note/2026-01-01_vi_text_editor.md)
 
 ### VI Editor
 
-* [Introduction to VI Editor](vi_note/basic_vi.md)
-
+* [2026-01-03 GIT for Beginners](2026-01-03_git_for_beginners.md)
+* [2026-01-07 Starting GIT](2026-01-07_starting_git.md
