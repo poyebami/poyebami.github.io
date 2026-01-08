@@ -2,6 +2,6 @@
 
 ### Linux
 
-  * [Introduction to Linux](linux/01_working_with_linux.md)
+  * [Introduction to Linux](linux/introduction_to_linux.md)
   
 
