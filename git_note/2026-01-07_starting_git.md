@@ -15,11 +15,9 @@
   $ git status
     On branch master # branches are multiple states of the codebase. Different versions of the code to test new feature, bux fixes, or experiments without affecting the original project. Master branch is the default
         no commits yet # commits are changes made on the  repository
-
-        untracked files: # untracked files are files GIT knows of but we had not yet told GIT what to do with them
+         untracked files: # untracked files are files GIT knows of but we had not yet told GIT what to do with them
             Story1.txt
-
-            # nothing added to commit but untracked files present
+    # nothing added to commit but untracked files present
    ```
 
 <h3> Commiting Files in GIT </h3>
