@@ -20,7 +20,7 @@
             Story1.txt
 
             # nothing added to commit but untracked files present
-  ```
+   ```
 
 <h3> Commiting Files in GIT </h3>
 
