@@ -33,23 +33,23 @@ There are two types of merges.
   * `Fast-foward` describles what happens when a branch can be moved straight ahead to a new commit without create a merge commit.
   
    ```console
-     Before merge 
-        A - B - C (main)
-                 \
+    Before merge 
+       A - B - C (main)
+                \
                   D - E (feature)
 
-     After merge
+    After merge
         A - B - C - D - E
    ```
 
   * `No-fast-foward` means GIT is forced to create a merge commit. If we committed changes on the current branch that the branch, we want to merge doesn't have, GIT will perform a no-fast-forward merge.
 
    ```console
-     Before merge
-        A - B - C - M (main)
+    Before merge
+       A - B - C - M (main)
                 \
                  D - E (feature)
-     After merge
+    After merge
        A - B - C --- M (main)
                \     /
                 D - E (feature) 
