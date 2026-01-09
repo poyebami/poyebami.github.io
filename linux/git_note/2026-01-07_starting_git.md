@@ -77,6 +77,9 @@
   $ git log --oneline # only shwos condensed views of commit history
   $ git log --name-only # will show the list of changed files names
   $ git log -1 # shows the latest commit in the repository
+  $ git log --graph --decorate
+  $ # --graph creates a ASCLL graph on the left showing branches splitting and merging.
+  $ $ --decorate adds labels to commits such as a branch name : (main, features), HEAD and tags 
   ```
 
 
