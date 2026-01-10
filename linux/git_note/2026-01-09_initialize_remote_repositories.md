@@ -4,18 +4,18 @@
 <h3>Remote Repositories </h3>
 There are serveral platmores like GitHub on which we can host our remote repository. once we've initializex a repository, we get 
 access to a `Connection String`. A Connection String is a URL that we can use in order to let GIT know where the remote repository is located.
-    ```console
-     $ # add remote repository to our local project
-     $ git remote add origin # used origin to know which remote repository we're pushting to withot having to memorize the entire connection string
-     $ git remote add origin https://.../.../[name].git 
+ ```console
+ $ # add remote repository to our local project
+ $ git remote add origin # used origin to know which remote repository we're pushting to withot having to memorize the entire connection string
+ $ git remote add origin https://.../.../[name].git 
 
-     $ # list all your remote repositories
-     $ git remote -v 
+ $ # list all your remote repositories
+ $ git remote -v 
 
-     #confique config the GIT remote repository to sarah's story blog
-     $ cd /home/sarah/story-blog
-     $ git remote add origin http://git.example.com/sarah/story-blog.git
-    ```
+ $  #confique config the GIT remote repository to sarah's story blog
+ $ cd /home/sarah/story-blog
+ $ git remote add origin http://git.example.com/sarah/story-blog.git
+ ```
 We can fetch and push the necessary data from our local project to the hosted repository.
 
 <h3>Pushing </h3>
