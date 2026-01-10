@@ -79,7 +79,7 @@
   $ git log -1 # shows the latest commit in the repository
   $ git log --graph --decorate
   $ # --graph creates a ASCLL graph on the left showing branches splitting and merging.
-  $ $ --decorate adds labels to commits such as a branch name : (main, features), HEAD and tags 
+  $ # --decorate adds labels to commits such as a branch name : (main, features), HEAD and tags 
   ```
 
 
