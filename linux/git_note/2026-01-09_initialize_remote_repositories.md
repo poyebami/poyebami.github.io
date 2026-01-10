@@ -20,18 +20,18 @@ We can fetch and push the necessary data from our local project to the hosted re
 
 <h3>Pushing </h3>
 In order to keep our local and remote repository in sync, we need to push the data from our local repository to the remote repository. 
-    ```console
-     $ # push data to the remote repository
-     $ git push origin master # expects two more arguments. The alias of the remote repository, and current branch that we are on.
-    ```
+ ```console
+ $ # push data to the remote repository
+ $ git push origin master # expects two more arguments. The alias of the remote repository, and current branch that we are on.
+ ```
 
 <h3>Cloning Remote Repositories </h3>
 A new person is hired and they want to get access to all the dataa that's currently hosted on the remote repository. They can colon the 
 repository in order to get all the data on their local machines, 
-    ```console
-     $ git clone [ ssh link ] 
-     $ # cloning from GitHub
-     $ git clone git@github.com:account/remote-repo.git
-    ```
+ ```console
+ $ git clone [ ssh link ] 
+ $ # cloning from GitHub
+ $ git clone git@github.com:account/remote-repo.git
+ ```
 
 <h3>Pull Request </h3>
