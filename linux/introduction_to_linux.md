@@ -12,3 +12,4 @@
    * [2026-01-08 GIT Branches](git_note/2026-01-08_git_branches.md)
    * [2026-01-09 Initialize Remote Repositories](git_note/2026-01-09_initialize_remote_repositories.md)
    * [2026-01-12 Rebasing](git_note/2026-01-12_rebasing)
+   * [2026-01-12 Resetting and Reverting](git_note/2026-01-12_resetting_and_reverting.md)
