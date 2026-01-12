@@ -35,3 +35,7 @@ repository in order to get all the data on their local machines,
  ```
 
 <h3>Pull Request </h3>
+ ```console
+ $ git push origin sarah # push the latest changes to GitHub
+ ```
+ In 
