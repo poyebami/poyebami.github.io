@@ -18,6 +18,7 @@ access to a `Connection String`. A Connection String is a URL that we can use in
  ```
 We can fetch and push the necessary data from our local project to the hosted repository.
 
+
 <h3>Pushing </h3>
 In order to keep our local and remote repository in sync, we need to push the data from our local repository to the remote repository. 
  ```console
@@ -26,7 +27,7 @@ In order to keep our local and remote repository in sync, we need to push the da
  ```
 
 <h3>Cloning Remote Repositories </h3>
-A new person is hired and they want to get access to all the data that's currently hosted on the remote repository. They can colon the 
+A new person is hired and they want to get access to all the dataa that's currently hosted on the remote repository. They can colon the 
 repository in order to get all the data on their local machines, 
  ```console
  $ git clone [ ssh link ] 
@@ -38,20 +39,21 @@ repository in order to get all the data on their local machines,
  ```console
  $ git push origin sarah # push the latest changes to GitHub
  ```
-In order to merge Sarah into Master, we'll have to open a `pull request` and create a pull request on GitHub. 
-Other teams members can see the changes and comment on them. If everything has been approved, you can merge 
-your chanages into master by clicking `Merge pull request`. 
+In order to merge Sarah into Master, we'll have to open a `pull request` and create a pull request on GitHub.
+Other teams members can see the changes and comment on them. If everything has been approved, you can merge
+your chanages into master by clicking `Merge pull request`.
 
- <h3>Fetching and Pulling </h3>
-Since we updated the master branch, our local repository don't automatically have the changes. We have to `fetch` the changes into our local 
-repository. 
+
+<h3>Fetching and Pulling </h3>
+Since we updated the master branch, our local repository don't automatically have the changes. We have to `fetch` the changes into our local
+repository.
  ```console
  $ # update the origin master branch in our local repository
  $ git fetch origin master
  ```
 Now that we have fetched the origin master, we can update our local master branch to point to the latest changes made on origin master.
  ```console
- $ # update our local master branch to point to the changes made on origin master by merging 
+ $ # update our local master branch to point to the changes made on origin master by merging
  $ git merge origin/master
  ```
 Instead of indivdually fetching and then merging, we can `pull` the origin master branch
@@ -59,7 +61,3 @@ Instead of indivdually fetching and then merging, we can `pull` the origin maste
  $ # two commands in one. (git fetch and git merge)
  $ git pull origin master # two commands in one git fetch and git merge
  ```
-
- <h3>GIT - Merge Conflict</h3>
-
-
