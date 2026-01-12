@@ -71,10 +71,10 @@ During a conflict, Git adds some extra characters to the file that's conflicting
  ```console
  $ ##  Fourth Story
    <<<<<< HEAD
-   This is Sarah's version  # current conext of the conflixting files
+ $  This is Sarah's version  # current conext of the conflixting files
    ========
    This is Max's version
-   >>>>>> max               # contents that we're trying to merge
+ $  >>>>>> max               # contents that we're trying to merge
    of the fourth story!
 
    Some extra stuff Sarah 
