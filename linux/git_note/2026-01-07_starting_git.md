@@ -72,14 +72,21 @@
 <h3>Showing all information from commits </h3>
  
   ```console
-  $ git log # shows information about all commits made including commit hash, author name, date, and commit message
+  $ # shows information about all commits made including commit hash, author name, date, and commit message
+  $ git log 
+  
+  $ # only shows condensed views of commit history; including commit hash, file name, and commit message
+  $ git log --oneline 
 
-  $ git log --oneline # only shwos condensed views of commit history
-  $ git log --name-only # will show the list of changed files names
-  $ git log -1 # shows the latest commit in the repository
-  $ git log --graph --decorate
+  $ # will show the list of changes files names
+  $ git log --name-only
+
+  $ # shows the latest commit in the repository
+  $ git log -1 
+
   $ # --graph creates a ASCLL graph on the left showing branches splitting and merging.
   $ # --decorate adds labels to commits such as a branch name : (main, features), HEAD and tags 
+  $ git log --graph --decorate
   ```
 
 
