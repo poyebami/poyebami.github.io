@@ -27,6 +27,12 @@
    $ Press shift g or Capital G # to go to the last line of a file
    $ Press <number>G # to go to any other line. 4+ shift g to go to the 4th line on the file
    $ Press o to open a new file
+   $ # move current line to the top of the screen
+   $ zt
+   $ # center line
+   $ zz
+   $ # move current line to bottom
+   $ zb
    $ Press ESC # when in other modes to return back to normal mode
    ```
 
