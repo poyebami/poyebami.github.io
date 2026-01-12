@@ -18,6 +18,8 @@ The HEAD points to the last commit in the branch that you're currently on. When 
   $ # to delete a branch
   $ git branch -d max # delete branch max
 
+  $ # view all braches- both local and remote
+  $ git branch -a
   $ # to see the name of all branches
   $ git branch 
   ```
