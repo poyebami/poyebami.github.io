@@ -29,7 +29,11 @@ To merge branches, we need to checkout to the branch we want to merge with.
 For example: we switch to master branch to merge branch feature/signup into master branch
  
  ```console
-  $ git merge "branch_name"
+  $ # checkout to master branch
+  $ git checkout master
+
+  $ # merging feature/signup branch to master branch
+  $ git merge "feature/signup"
   ```
 There are two types of merges. 
   * `Fast-foward` describles what happens when a branch can be moved straight ahead to a new commit without create a merge commit.
