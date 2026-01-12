@@ -110,8 +110,7 @@
 
   ```console
   $ cd /home/prosper/Asia
-  
-  ```
+   ```
 
 * `Relative Path` jumps straight to the directory without writing the whole root directory
 
