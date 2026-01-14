@@ -53,7 +53,7 @@ The parent is the parent commit.
 
 <h3>Git Object Contents </h3>
 Folders in the object folder cam be of three different object types.
-`Commit` is a commit
+`Commit` is a commit.
 `Tree` is a folder on your file system that is associated with the repository.
 `Blob` is a piece of data.
 
