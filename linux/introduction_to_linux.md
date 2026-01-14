@@ -14,3 +14,7 @@
    * [2026-01-12 Rebasing](git_note/2026-01-12_rebasing)
    * [2026-01-12 Resetting and Reverting](git_note/2026-01-12_resetting_and_reverting.md)
    * [2026-01-14 Understanding GIT](git_note/2026-01-14_understanding_git.md)
+
+- ## Bash
+   * [2026-01-14 Generating and Using SSH Keys in Bash](bash_note/2026-01-14_generating_and_using_ssh_key_in_bash.md)
+
