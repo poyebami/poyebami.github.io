@@ -2,6 +2,6 @@
 
 
 ## Linux
-   * [Linux Basic](linux/introduction_to_linux.md)
+   * [Linux Basic](linux/linux_basic_index.md)
   
 
