@@ -2,7 +2,7 @@
 
 - ## Linux
    * [2025-12-31 Working with Shell ](linux_basic_note/2025-12-31_working_with_shell.md)
-   * [2026-01-15 Linux Core Concepts](lunux_basic_note/2026-01-15_linux_core_concepts.md)
+   * [2026-01-15 Linux Core Concepts](linux_basic_note/2026-01-15_linux_core_concepts.md)
 - ## VI Editor
    * [2026-01-01 VI Editor](vi_note/2026-01-01_vi_text_editor.md)
 
