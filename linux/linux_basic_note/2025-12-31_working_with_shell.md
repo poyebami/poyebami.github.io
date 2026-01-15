@@ -164,4 +164,53 @@ $SHELL is a environment variable. Variable are used to store information. Enviro
  $ export OFFICE=caleston
  $ OFFICE=caleston # only apply the variable within the shell. To make these variable persistent over subsequent login or reboots, add them to the .profile or .pam_environment file in the user's home directory.
  ```
+When a user issues an exernal command into the shell, the shell uses a PATH variable to search for these external commands.
+ ```console
+ $ # see the directories defined in the PATH variable
+ $ echo $PATH
 
+ $ # check if the location of a commmand can be identified
+ $ which obs-studio
+
+ $ # path to this program is not defined in the PATH variable
+ $ obs-studio
+ obs-studio: command not found
+
+ $ # adds the PATH
+ $ export PATH=$PATH:/opt/obs/bin
+
+ $ # the PATH is set and check using the WHICH command again
+ $ which obs-studio
+ /opt/obs/bin/obs-studio
+ ```
+
+<h3> Bash Prompt </h3>
+ ```console
+ [~]$
+ ~ = Presents Working Directory
+ $ = User Prompt Symbol
+
+$ #  It can be customized to show the username and the hostname.
+$ #  Help when a user is logged into multiple systems trhough multiple terminals.
+$ [michael@prod-server]$
+ ```
+The Bash Shell prompt is set and controlled by a set of speical shell environment variables. 
+The most common is PS1 variable.
+  ```console
+  $ echo $PS1
+  [\W]$
+
+  \W = Presents Working Directory =~
+  $ = Prompt Symbol
+  ```
+Customize the prompt by updating the PS1 variable. Bash displays the primpary prompt PS1 when its ready to read a command.
+ ```console
+ $ PS1="ubuntu-server:"
+ ubuntun-server:
+
+ ubuntun-server: echo $PS1
+ ubuntun-server:
+
+ ubuntsu-server: PS1="[\d \t \u@\h:\w ] $ "
+ [Thu Mar 12 22:12:54 bob@caleston:~ ] $
+ ```
