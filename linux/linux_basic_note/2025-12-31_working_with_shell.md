@@ -117,3 +117,49 @@
   ```console
   $ cd Japan/ # I'm currently in ~/Asia directory, don't need to specific /home/prosper/Asia/Japan/
   ```
+
+<h3> Bash Shell </h3>
+There are different types of shell in linux.
+ * Bourne Shell (sh)
+ * C Shell (csh or tcsh)
+ * Korn Shell (ksh)
+ * Z Shell (zsh)
+ * Bourne again Shell (bash)
+ ```console
+ $ # check the shell being used
+ $ echo $SHELL
+ /bin/bash
+
+ $ # change shell and after log in a new therminal session to see the change
+ $ chsh
+ Password:
+ Changing the login shell for michael
+ Enter the new value, or press ENTER for the default
+         Login Shell [/bin/bash]: /bin/sh
+ ```
+
+<h3> Bash Shell Features </h3>
+Bash support command auto-completion. Bash will auto-complete commands if you type part of it and press the Tab Key. In Bash, we can set custom aliases for
+the actual commands.
+ ```console
+ $ # creating a custom aliases for date command
+ $ alias dt=date
+
+ $ # list the perviously run commands
+ $ history
+ ```
+
+<h3> Bash Envioronment Variables </h3>
+  ```console
+  $ echo $SHELL
+  ```
+$SHELL is a environment variable. Variable are used to store information. Environment Variables store infomation about the user's login session.
+ ```console
+ $ # shows the list of all environment variable
+ $ env
+
+ $ # set an environment variable 
+ $ export OFFICE=caleston
+ $ OFFICE=caleston # only apply the variable within the shell. To make these variable persistent over subsequent login or reboots, add them to the .profile or .pam_environment file in the user's home directory.
+ ```
+

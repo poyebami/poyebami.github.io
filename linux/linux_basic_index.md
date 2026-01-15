@@ -1,6 +1,6 @@
 # Table of Contents 
 
-- ## Linux Basic
+- ## Linux
    * [2025-12-31 Working with Shell ](linux_basic_note/2025-12-31_working_with_shell.md)
 
 - ## VI Editor
