@@ -125,7 +125,8 @@ There are different types of shell in linux.
  * Korn Shell (ksh)
  * Z Shell (zsh)
  * Bourne again Shell (bash)
- ```console
+
+```console
  $ # check the shell being used
  $ echo $SHELL
  /bin/bash
@@ -141,7 +142,8 @@ There are different types of shell in linux.
 <h3> Bash Shell Features </h3>
 Bash support command auto-completion. Bash will auto-complete commands if you type part of it and press the Tab Key. In Bash, we can set custom aliases for
 the actual commands.
- ```console
+
+```console
  $ # creating a custom aliases for date command
  $ alias dt=date
 
