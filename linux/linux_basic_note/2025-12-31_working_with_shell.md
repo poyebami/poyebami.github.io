@@ -162,7 +162,15 @@ $SHELL is a environment variable. Variable are used to store information. Enviro
 
  $ # set an environment variable 
  $ export OFFICE=caleston
- $ OFFICE=caleston # only apply the variable within the shell. To make these variable persistent over subsequent login or reboots, add them to the .profile or .pam_environment file in the user's home directory.
+ $ echo $OFFICE
+ caleston
+ $ OFFICE=caleston # only apply the variable within the shell. 
+
+ $ # To make these variable persistent over subsequent login or reboots, add them to the .profile or .pam_environment file in the user's home directory.
+ $ echo 'export MY_VARIABLE="example_value"' >>~/.profile
+ 
+ $ to add an alias, like ll for ls -1 to profile
+ $ echo 'alias ll="ls -1"' >>~/.profile
  ```
 When a user issues an exernal command into the shell, the shell uses a PATH variable to search for these external commands.
  ```console
