@@ -170,19 +170,20 @@ Linux can run in multiple modes. These modes are set by the runlevel. To see the
  N  3
  ```
  Runlevel 5: boots into a graphical interface
+ 
  Runlevel 3: boots into a command line interface.
 
 During boot, the INIT processess checks the runlevel. It makes sure that all programs needed to get the system ooperational in that mode are started.
 For example, the graphical user mode requires a display manager service to run for the GUI (graphical user interface) to work.
+
 In systemd, runlevels are called targets. 
- 
- Runlevel 0: is called poweroff.target
- Runlevel 1: is called rescue.target
- Runlevel 2: is called multi-user target
- Runlevel 3: is called multi-user target
- Runlevel 4: is called multi-user target
- Runlevel 5: is called the graphical target
- Runlevel 6: is called the reboot.target
+* Runlevel 0: is called poweroff.target
+* Runlevel 1: is called rescue.target
+* Runlevel 2: is called multi-user target
+* Runlevel 3: is called multi-user target
+* Runlevel 4: is called multi-user target
+* Runlevel 5: is called the graphical target
+* Runlevel 6: is called the reboot.target
 
  ```console
  $ # see default target
@@ -204,11 +205,15 @@ There are 3 types of files. Regular files, directory, and speical files.
  * Directory is a type of file that stores other files and directories within. 
  * Special Files can be subcategorized into 5 other file types.
     1. Character files represent devices under the /dev file system that allows the OS to communicate to I/O devices serially. Example includes devices such as the mouse and keyboard.
+    
     2. Block files represent devices under /dev. Block device from and write to the device in block, or a chunk of data. Example of block decives are hard disks and RAM.
+    
     3. Links in Linux are a way to associate two or more filenames to the same set. There are two types of links.
     `HARD LINK` associates two or more filenames that share the same block of data on the physical disk, although they behave as independent files. Deleting one link will delete the data.
     `SOFT LINK` or symbolic link (symlink) is pretty much a shortcut in Windows. They act as pointers to another file. Deleting a symlink does not affect the data in the actual file.
+    
     4. Socket files is a special file that enables the communication between two processes.
+    
     5. Named Pipes is a special type of file that allows connecting one process as an input to another. The data flow in a pipe is unidirectional from the first process to the second.
 
 How to identify the different file types in linux
@@ -244,9 +249,13 @@ How to identify the different file types in linux
 /bin    /boot   /dev    /etc    /home   /lib    /media  /mnt    /opt    /tmp    /usr    /var
  ```
 The /home is the location that contains the home directories for all users, except for the root user.
+
 The root user's home directory is located at /root.
+
 Install any third-party program, put them in the /opt filesystem.
+
 /mnt is used to mount filesystem temporarily in the system. 
+
 /tmp directory is used to store temporary data.
 external media such as usb disk will be mounted under /media
 
@@ -254,11 +263,16 @@ external media such as usb disk will be mounted under /media
  $ # df or disk filesystem command prints out details about all the mounted filesystems.
  $ df -hP
  ```
+ 
 /dev filesystem contains the sepcial block and character device files. Contains files for devices such as external 
-hard disks, and devices such as the mouse and keyboard.
-basic programs and binaries such as the CP, MV, MKDIR, data commands are located in the /bin directory.
+hard disks, and devices such as the mouse and keyboard. basic programs and binaries such as
+the CP, MV, MKDIR, data commands are located in the /bin directory.
+
 /etc is used to store most of the configuration files in linux.
+
 /lib and /lib64 is the place to look for shared libraries to be imported into programs.
+
 /usr used to be the home directories in older systems. Now its the location where all userland applications and their data reside. Examples 
 of the applications are the Thunderbird Mail Client, mozilla firefox, and vi editor, etc.
+
 /var is the directory where the system write data such as logs nad cached data. When running into issues with the system or an application, look at the logs in /var
