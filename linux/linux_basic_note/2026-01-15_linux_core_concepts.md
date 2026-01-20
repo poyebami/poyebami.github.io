@@ -204,17 +204,17 @@ There are 3 types of files. Regular files, directory, and speical files.
  * Regular files hare the most common type of files that contains some text, data, or images. Examples are configuration files, shell scripts or code, JPEG files, etc. 
  * Directory is a type of file that stores other files and directories within. 
  * Special Files can be subcategorized into 5 other file types.
-    1. Character files represent devices under the /dev file system that allows the OS to communicate to I/O devices serially. Example includes devices such as the mouse and keyboard.
+   1. Character files represent devices under the /dev file system that allows the OS to communicate to I/O devices serially. Example includes devices such as the mouse and keyboard.
     
-    2. Block files represent devices under /dev. Block device from and write to the device in block, or a chunk of data. Example of block decives are hard disks and RAM.
+   2. Block files represent devices under /dev. Block device from and write to the device in block, or a chunk of data. Example of block decives are hard disks and RAM.
     
-    3. Links in Linux are a way to associate two or more filenames to the same set. There are two types of links.
+   3. Links in Linux are a way to associate two or more filenames to the same set. There are two types of links.
     `HARD LINK` associates two or more filenames that share the same block of data on the physical disk, although they behave as independent files. Deleting one link will delete the data.
     `SOFT LINK` or symbolic link (symlink) is pretty much a shortcut in Windows. They act as pointers to another file. Deleting a symlink does not affect the data in the actual file.
     
-    4. Socket files is a special file that enables the communication between two processes.
+   4. Socket files is a special file that enables the communication between two processes.
     
-    5. Named Pipes is a special type of file that allows connecting one process as an input to another. The data flow in a pipe is unidirectional from the first process to the second.
+   5. Named Pipes is a special type of file that allows connecting one process as an input to another. The data flow in a pipe is unidirectional from the first process to the second.
 
 How to identify the different file types in linux
  ```console
