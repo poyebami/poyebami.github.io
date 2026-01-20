@@ -6,10 +6,11 @@ Kernel is the major component of an operating system and is the core interface b
 The Kernal is responsible for four major task. Linux Kernal is monolithic. The kernel carries out CPU sheduling, memory management, and 
 several other operations by itself. The kernal is also modular, which means it can extend its capabilities through the use of dynamically 
 loaded kernal modules. 
-    * Memory Management : keeps track of how much memory is used to sotre what and where
-    * Process Mangagement : determines which processess can use the CPU, when, and for how long
-    * Device Drivers : acts as a mediator or an interpreter between the hardware and processes
-    * System calls and security : receieve requests for service from the processess
+
+ * Memory Management : keeps track of how much memory is used to sotre what and where
+ * Process Mangagement : determines which processess can use the CPU, when, and for how long
+ * Device Drivers : acts as a mediator or an interpreter between the hardware and processes
+ * System calls and security : receieve requests for service from the processess
 
 <h3>Ways to identify the Linux Kernel version </h3>
  ```console
@@ -48,7 +49,7 @@ System Calls allows the user programs to request services from the kernel. Examp
  $ # calculates the length of the string pointed to 
  $ strlen()
 
- $ $ closes the directory stream assoicated with dirp
+ $ # closes the directory stream assoicated with dirp
  $ closedir()
  ```
 
@@ -90,7 +91,7 @@ Ways to List and get detailed information about hardware
     sda4                 8:4     0        1G   0  part
     sda5                 8:5     0     46.6G   0  part  /  
 
-  $ # number 8 erfers to a block disk while the minor numbers is used to differentiate amongst devices taht are similar and share the same major number.
+  $ # number 8 refers to a block disk while the minor numbers is used to differentiate amongst devices taht are similar and share the same major number.
   $ # number 0-5 help identify the different partitions for the disk SDA.
 
   MAJOR NUMBER          DEVICE TYPES
@@ -134,3 +135,130 @@ Ways to List and get detailed information about hardware
  $ # define which commands they can run, and also replay back commands a user has run with root privilages.
  $ sudo lshw
  ```
+
+<h3>Linux Boot </h3>
+Linux boot process can be broken down into four stages.
+    * Bios Post
+    * Boot Loader (GRUB2)
+    * Kernel Initialization
+    * INIT Process (systemd)
+
+1. Bios Post : Post stands for Power-On Self-Test. In this stage, BOIS runs a POST test to ensure that the hardware components attached to
+the device are functioning correctly.
+
+2. Boot Loader (GRUB2) : After the bios post, the BOIS loads and executes the boot code from the boot device. 
+Which is located in teh first sector of the hard disk. In linux, this is located in the /boot file system. The boot loader provides the user with a boot screen,
+often with multiple options to boot into. Once the selection is made at boot screen, the boot loader loads the linux kernel into memory, supplies it with some parameters, 
+and hands over the control to the kernel. GRUB2 stands for Grand Unified Boot Loader Version 2. 
+
+3. Kernel Initialization: After the selected kernel is loaded into the memory, it is usually decompresssed. This is done as the kernels are in a compressed state to conserve space.
+The kernel is then loaded into the memory and starts executing. During this phase, the kernel carries out tasks, such as initializing hardware and memory management tasks, among other
+things. Once it is completely operational, the kernel looks for an INIT process to run, which sets up the user sapce and the processess needed for the use environment. 
+
+4. INIT Process: the INIT funcation then calls the systemd daemon. Systemd is responsible for bringing the linux host to a usable state. Systemd is responsible for mounting files systems,
+starting, and managaing system services. In the past, another initialization processes called SYSV-INIT (SYS5) was used. It was used in RHEL6 or CentOS 6 distributions. One of the advantages of 
+using systemd over sysv-init is that it reduces system startup time by parallelizing the startup of services. To check the INIT system used run
+ ```console
+  ls -l /sbin/init
+  lrwxrwxrwx /sbin/init -> /lib/systemd/systemd
+ ```
+
+<h3>Runlevels </h3>
+Linux can run in multiple modes. These modes are set by the runlevel. To see the operation mode set in the system, run the command called runlevel in the shell. 
+ ```console
+ $ runlevel
+ N  3
+ ```
+ Runlevel 5: boots into a graphical interface
+ Runlevel 3: boots into a command line interface.
+
+During boot, the INIT processess checks the runlevel. It makes sure that all programs needed to get the system ooperational in that mode are started.
+For example, the graphical user mode requires a display manager service to run for the GUI (graphical user interface) to work.
+In systemd, runlevels are called targets. 
+ 
+ Runlevel 0: is called poweroff.target
+ Runlevel 1: is called rescue.target
+ Runlevel 2: is called multi-user target
+ Runlevel 3: is called multi-user target
+ Runlevel 4: is called multi-user target
+ Runlevel 5: is called the graphical target
+ Runlevel 6: is called the reboot.target
+
+ ```console
+ $ # see default target
+ $ systemctl get-default
+ graphical.target
+ $ # the command looks up the file located at /etc/systemd/system/default.target
+
+ $ ls -ltr /etc/systemd/system/default.target
+ /etc/systemd/system/default.target -> /lib/systemd/system/graphical.target
+
+ $ # change the default target
+ $ systemctl set-default multi-user.target
+ Created symlink /etc/systemd/system/default.target -> /lib/systemd/system/multi-user.target
+ ```
+
+<h3>File Types </h3>
+There are 3 types of files. Regular files, directory, and speical files. 
+ * Regular files hare the most common type of files that contains some text, data, or images. Examples are configuration files, shell scripts or code, JPEG files, etc. 
+ * Directory is a type of file that stores other files and directories within. 
+ * Special Files can be subcategorized into 5 other file types.
+    1. Character files represent devices under the /dev file system that allows the OS to communicate to I/O devices serially. Example includes devices such as the mouse and keyboard.
+    2. Block files represent devices under /dev. Block device from and write to the device in block, or a chunk of data. Example of block decives are hard disks and RAM.
+    3. Links in Linux are a way to associate two or more filenames to the same set. There are two types of links.
+    `HARD LINK` associates two or more filenames that share the same block of data on the physical disk, although they behave as independent files. Deleting one link will delete the data.
+    `SOFT LINK` or symbolic link (symlink) is pretty much a shortcut in Windows. They act as pointers to another file. Deleting a symlink does not affect the data in the actual file.
+    4. Socket files is a special file that enables the communication between two processes.
+    5. Named Pipes is a special type of file that allows connecting one process as an input to another. The data flow in a pipe is unidirectional from the first process to the second.
+
+How to identify the different file types in linux
+ ```console
+ $ file /home/michael/
+ /home/michael/: directory
+
+ $ file bash-script.sh
+ bash-script.sh: Bourne-Again shell script, UTF-8 Unicode text executable
+
+ $ file insync1000.sock
+ insync100.sock: socket
+
+ $file /home/michael/bash-script
+ /home/michael/bash-script: symbolic link to /home/sara/bash-script.sh
+
+ $ ls -ld /home/michael/
+ drwxr-xr-x 3 root root 4096 Mar 18 17:20 /home/michael/
+ $ # from the command output, look at the first character. The letter D denotes that this is a directory
+
+ We can indentify the rest of the file type by checking the first letter in the ls -l outpout.
+ Directory              d
+ Regular File           -
+ Character Device       c
+ Link                   l
+ Socket File            s
+ Pipe                   p
+ Block Device           b
+ ```
+<h3>Filesystem Hierarchy </h3>
+ ```console                            
+                            /(root Partition)
+/bin    /boot   /dev    /etc    /home   /lib    /media  /mnt    /opt    /tmp    /usr    /var
+ ```
+The /home is the location that contains the home directories for all users, except for the root user.
+The root user's home directory is located at /root.
+Install any third-party program, put them in the /opt filesystem.
+/mnt is used to mount filesystem temporarily in the system. 
+/tmp directory is used to store temporary data.
+external media such as usb disk will be mounted under /media
+
+ ```console
+ $ # df or disk filesystem command prints out details about all the mounted filesystems.
+ $ df -hP
+ ```
+/dev filesystem contains the sepcial block and character device files. Contains files for devices such as external 
+hard disks, and devices such as the mouse and keyboard.
+basic programs and binaries such as the CP, MV, MKDIR, data commands are located in the /bin directory.
+/etc is used to store most of the configuration files in linux.
+/lib and /lib64 is the place to look for shared libraries to be imported into programs.
+/usr used to be the home directories in older systems. Now its the location where all userland applications and their data reside. Examples 
+of the applications are the Thunderbird Mail Client, mozilla firefox, and vi editor, etc.
+/var is the directory where the system write data such as logs nad cached data. When running into issues with the system or an application, look at the logs in /var
