@@ -28,10 +28,17 @@ installing, or updating existing software from a software repoistory.
 * grouping packages by function ro reduce user confusion.
 * managing dependenciesto ensure a package is installed with all packages it requires, avoiding the 'dependency hell'.
 
-Some of the common package managers are DPKG, used for Debian-based distributions. APT, a newer front-end for the DPKG system found in Debian-based distribution, such as 
-Ubuntu, Linux Mint, and elementary OS. APT-GET is the traditional front-end fro the DPKG system also found in Debian-based distributions. RPM is the base package manager found
-in Red Hat-based distributions, such as Red Hat Enterprise Linux, CentOS, and Fedora. YUM, a front-end for the RPM system found in Red Hat-based distributions. DNF, a more feature-rich
-front-end for the RPM system.
+Some of the common package managers are DPKG, used for Debian-based distributions.
+
+APT, a newer front-end for the DPKG system found in Debian-based distribution, such as Ubuntu, Linux Mint, and elementary OS.
+
+APT-GET is the traditional front-end fro the DPKG system also found in Debian-based distributions.
+
+RPM is the base package manager found in Red Hat-based distributions, such as Red Hat Enterprise Linux, CentOS, and Fedora.
+
+YUM, a front-end for the RPM system found in Red Hat-based distributions.
+
+DNF, a more feature-rich front-end for the RPM system.
 
 <h3>RPM and YUM </h3>
 RPM (Red Hat Package Manager): the file extension for packages managed by RPM is .rpm. RMP has five basic modes of operations: installing, uninstalling, upgrade, query, and verifying.
@@ -128,3 +135,81 @@ in this diectory in case you don't want to make sure of the official repo. /etc/
      $ # list all available commands
      $ yum help
     ```
+
+<h3>DPKG and APT </h3>
+DPKG (Debian Package Manager) and similar to RPM, it is a low-level package manager and can be used to install, remove, upgrade, list, and verify a package.
+The package extension is .DEB.
+
+ * Installation / Upgrade
+    ```console
+     $ # install or update an existing package
+     $ dpkg -i telnet.deb
+    ```
+
+ * Uninstalling
+    ```console
+     $ # uninstall a package
+     $ dpkg -r telnet.deb
+    ```
+    "r" stands for remove
+
+ * List
+    ```console
+     $ # list packages installed in the system along with the version number and short description
+     $ dpkg -l telnet
+    ```
+    "l" stands for list
+
+ * Status
+    ```console
+     $ # check the status of the package
+     $ dpkg -s telnet
+    ```
+    "s" stands for status 
+
+ * Verifying 
+    ```console
+     $ # display detail about package sucj as version number, maintainer, etc
+     $ dpkg -p <path to file>
+    ```
+Similar to RPM, DPKG does not honor the dependencies when it comes to package management. We use higher-level Debian package managers, such as APT and APT-GET.
+
+APT stands for Adanced Package Tool and is more user-friendly, and a better tool comapared to APT-GET. 
+
+APT acts as a front-ed package manager that relies on the DPKG utility, quite similar to the relation between YUM and RPM. Similar to YUM, APT relies on a software
+repository that contains packagaes that would be installed on the system. The software repository for APT is defined in the /etc/apt/source.list file. The socurce can be 
+a local one, such as a directory on the file system or a CD-ROM. or it can be a remote location that is accessed via HTTP, HTTPS, or FTP transfer protocols.
+```console
+ apt install gimp
+ apt-get install gimp
+```
+
+* Common APT Commands
+    ```console
+     $ # refresh the repository and used to download package information from all available source.
+     $ # run it after installing the OS or after adding new sources
+     $ apt update
+
+     $ # install available upgrades of all packages currently installed on the system from the source configured
+     $ apt upgrade
+
+     $ # update the repositories
+     $ # opens the /etc/apt/sources.list file in the text editor 
+     $ apt edit-sources
+
+     $ # remove packages
+     $ apt remove telnet
+
+     $ # look for a package in the repository
+     $ apt search telnet
+
+     $ # list all the available packages
+     $ apt list | grep telnet
+    ```
+
+<h3>APT vs APT-GET </h3>
+APT is more user-friendly compared to APT-Get. APT is easy on the eyes and get enough infromation and a progress bar. 
+When searching for a package, APT has all the options located in one place and provides a shorter result.
+
+In APT-Get, you can't search for a package using the apt-get command. You have to use another tool called apt-cache with the search option. 
+Apt-cache throws in a lot of extra information in the search result.
