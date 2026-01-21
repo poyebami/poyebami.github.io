@@ -43,7 +43,9 @@ Each of these modes can be run using the rpm command followed by specific comman
      $ rpm -ivh telnet.rpm
     ```
     "i" stands for install
+    
     "v" stands for verbose. prints out a detailed output of the command
+    
     "h" stands for hash marks. shows progress with #######
  
  * Uninstalling 
@@ -61,7 +63,9 @@ Each of these modes can be run using the rpm command followed by specific comman
      $ rpm -Uvh telnet.rpm
     ```
     "u" stands for upgrade
+
     The RPM database stores information about all RPM packages installed in your system. /var/lib/rpm.
+    
     It is used to query what pacakages are installed, what version each package is, and any changes to any files in the package since installations, etc.
  
  * Query
@@ -78,7 +82,8 @@ Each of these modes can be run using the rpm command followed by specific comman
      $ rpm -v "package_name".rpm
      $ rpm -v telnet.rpm
     ```
-    verifying a package comapres information about files installed from a package with the same information from the original package. It useful to make sure that the package has been installed from a trusted and secure source.
+    Verifying a package comapres information about files installed from a package with the same information from the original package. It useful to make sure that the package has been installed from a trusted and secure source.
+    
     RPM does not resolve package dependencies on its own. There is a higher level package manager called YUM.
 
 YUM (Yellowdog Updater Modified) is a free and open-source package manager that works on RPM-based Linux systems. Works with software repositories, which are essentially a collection of packages
