@@ -5,5 +5,5 @@
    * [Linux Basic](linux/linux_basic_index.md)
   
 ## LLMs
-   * [Large Language Model](LLM/LLM_index.md)
+   * [Large Language Model Basic](LLM/LLM_index.md)
 
