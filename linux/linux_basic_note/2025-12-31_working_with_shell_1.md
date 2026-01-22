@@ -1,4 +1,4 @@
-<h1>Chapter 1: Working with the Shell</h1>
+<h1>Chapter 1: Working with the Shell 1</h1>
 
 <h3>Home Directory</h3>
 
