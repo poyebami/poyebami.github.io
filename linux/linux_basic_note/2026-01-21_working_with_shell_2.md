@@ -107,3 +107,118 @@ However, compressed file does not have to be uncompressed every time. Tool such 
  ff02::1    ip6-allnodes
  ff02::2    ip6-allrouters
  ```
+<h3>Searching for Files and Directories </h3>
+ ```console
+ $ # print out all paths
+ $ locate City.txt
+ /home/michael/Africa/Egypt/Cairo/City.txt
+ /home/michael/Asia/India/Mumbai/City.txt
+ ```
+ The depends on a database called mlocate.db for querying the file name. If you just installed linux or if the file you are trying to locate
+ was created recently. The command may not yield useful results because the DB has not been updated yet.
+
+ ```console
+ $ # update the DB
+ $ updatedb
+ ```
+ The updatedb command need to run as the root user to work.
+
+ ```console
+ $ # find files followed by the directory under which you want to search
+ $ find /home/michael -name City.txt
+ /home/michael/Africa/Egypt/Cairo/City.txt
+ /home/michael/Asia/India/Mumbai/City.txt
+ ```
+<h3>GREP</h3>
+To search within files, use the command GREP. GREP is used to print lines of a file matching a pattern.
+ ```console
+ $ # prints out what is in simple.txt
+ $ cat simple.txt
+ This is the first line
+ Followed bt the second line
+ And then the third line
+ The fourth line has CAPITAL LETTERS
+ The fifth line does not want to be printed
+ ```
+ ```console
+ $ # print out lines matching the search pattern
+ $ grep second samiple.txt
+ Followed by the second line
+
+ $ # the grep command is also case sensitive
+ $ grep capital sample.txt
+
+ $ # search case insensitive
+ $ grep -i capital sample.txt
+ The fourth line has CAPITAL LETTERS
+
+ $ # search for a pattern recursively within a directory
+ $ grep -r "third line" /home/michael
+ ./sample.txt: And then the third line. 
+ $ # useful when you don't know which file contains the specific pattern that you are looking for
+ 
+ $ # print the lines of a file that don't match a pattern
+ $ grep -v "printed" sample.txt
+ This is the first line
+ Followed by the second line
+ And then the third line 
+ The fourth line has CAPITAL LETTERS
+ ```
+Match a pattern that form whole words
+ ```console
+ $ # print out what is in example.txt
+ $ cat examples.txt
+ grep examples
+ linux exam on 19th
+ ```
+ ```console
+ $ # print out line that contains the pattern "exam"
+ $ grep exam examples.txt
+ grep "examp"les
+ linux "exam" on the 19th
+ $ # grep will print out line that contain the pattern "exam" so since examples contains the pattern "exam".
+ $ # thus the first line is printed
+
+ $ # to search for just the keyword 
+ $ grep -w exam example.txt
+ linux exam on 19th 
+
+ $ # print pattern that does not match whole word
+ $ grep -vw exam exmaples.txt
+ grep examples
+ ``` 
+ ```console
+ $ # print a number of lines after and before matching a pattern
+
+ $ # prints out content on the premier league table.txt file
+ 1 Arsenal
+ 2 Liverpool
+ 3 Chelsea
+ 4 Manchester City
+
+ $ # using -A1 to print out line matching the pattern and the line below
+ $ grep -A1 Arsenal premier-league.table.txt
+ 1 Arsenal 
+ 2 Liverpool
+
+ $ # using -B1 to print out line matching the pattern and line above
+ $ grep -B1 4 premier-league-table.txt
+ 3 Chelsea
+ 4 Manchester City
+ $ # if you want nubmer with -A or -B, it will print that number of lines after or before the match
+ ```
+ ```console
+ $ # you can combine both -A and -B
+ $ cat premier-league-table.txt
+ 1 Arsenal
+ 2 Liverpool
+ 3 Chelsea
+ 4 Manchester City
+ 
+ $ grep -A1 -B1 Chelsea premier-league-table.txt
+ 2 Liverpool
+ 3 Chelsea
+ 4 Manchester City
+ ```
+<h3>IO Redirection </h3>
+There are three data streams created when you launch a linux command. 
