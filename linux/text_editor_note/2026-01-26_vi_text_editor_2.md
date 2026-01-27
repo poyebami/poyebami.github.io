@@ -8,12 +8,12 @@ The command to open the editor is VI followed by the name of the file you want t
  ```
 <h3>Command Mode </h3>
 In command mode, press "yy" to copy a line.
- 
-To paste, just press "p".
+ ```console 
+  $ To paste, just press "p".
+  
+  $ To save the file, you uppercase "ZZ".
 
-To save the file, you uppercase "ZZ".
-
-To delete a letter, press "x".
+  $ To delete a letter, press "x".
 
 To delete a line, press "dd".
 
@@ -30,8 +30,9 @@ occurrence down the file press "n". To find the pattern above the current line, 
 
 "?" does the same thing but in reverse. It searches for the pattern f rom the cursor and moves upwards to find the next match. 
 Use "n" will move to find the next match and "N" searches down the file. 
-
+ ```
 <h3>Insert Mode</h3>
+ ```console
 i : insert the text before the current cursor position
 
 a: appends text after the current cursor position.
@@ -43,8 +44,9 @@ I: inserts text at the beginning of the current line, regardless of the cursor's
 A: appends text to the end of the current line, regardless of the cursor's starting position.
 
 O: opens a new line above the current line and places the cursor at the beginning of that new line in insert mode.
-
+ ```
 <h3>Lastline mode </h3>
+ ```console
 :w - saves the file after making a change but will still be within the editor.
 
 :q - to exit the file
@@ -53,6 +55,7 @@ O: opens a new line above the current line and places the cursor at the beginnin
 
 :q! - to quit without saving the file.
 
+ ```
 <h3>VIM</h3>
 VIM (VI Improved) is another popualar text editor but it is a improved version of VI with added features.
 The VI is a symbolic link or a shortcut to the VIM editor. To see the differences between VI and VIM, 
