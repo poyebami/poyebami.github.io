@@ -9,11 +9,11 @@ The command to open the editor is VI followed by the name of the file you want t
 <h3>Command Mode </h3>
 In command mode, press "yy" to copy a line.
  ```console 
-  $ To paste, just press "p".
+To paste, just press "p".
   
-  $ To save the file, you uppercase "ZZ".
+To save the file, you uppercase "ZZ".
 
-  $ To delete a letter, press "x".
+To delete a letter, press "x".
 
 To delete a line, press "dd".
 
@@ -62,5 +62,7 @@ The VI is a symbolic link or a shortcut to the VIM editor. To see the difference
 use the man pages or check within VIM. 
 
 To open a file using VIM:
+ ```console
+ $ vim "filename"
+ ```
 
-type VIM "filename" to see the differences use :hvi- differences
