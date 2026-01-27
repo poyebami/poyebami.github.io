@@ -35,6 +35,9 @@ Tar (tape archive) is used to group multiple files or directories into a single 
  $ # create and naming an archieve
  $ tar -cf test.tar file1 file2 file3
 
+ $ # creating a tarball of the directory called python. look at gzip for compression
+ $ tar -cf /home/bob/python.tar /home/bob/reptile/snake/python
+
  $ # display detailed infomraion about file, including its last modification time
  $ ls -ltr test.tar
  -rw-rw-r-- 1281054720 Mar 13 19:48 test.tar
@@ -67,6 +70,9 @@ Use to reduce the size consumed by a file or a dataset. Three of the popular com
  $ gzip test1.img
  $ du -sh test1.img.gz
  100K   test1.img.gz
+
+ $ # compressing tarball python using gzip
+ $ gzip /home/bob/python.tar
  ```
  ```console
  $ xz test2.img
@@ -87,6 +93,9 @@ Use to reduce the size consumed by a file or a dataset. Three of the popular com
  $ gunzip test1.img.gz
  $ du -sh test1.img
  99M    test1.img
+
+ $ # uncompressing file called eaglet.dat.gz located under /home/bob/birds/eagle directory and extracting it in the same location
+ $ gunzip /home/bob/birds/eagle/eaglet.dat.gz
  ```
  ```console
  $ unxz test2.img.xz
@@ -128,6 +137,9 @@ However, compressed file does not have to be uncompressed every time. Tool such 
  $ find /home/michael -name City.txt
  /home/michael/Africa/Egypt/Cairo/City.txt
  /home/michael/Asia/India/Mumbai/City.txt
+
+ $ # find file called caleston-code in /opt
+ $ sudo find /opt -name caleston-code
  ```
 <h3>GREP</h3>
 To search within files, use the command GREP. GREP is used to print lines of a file matching a pattern.
@@ -157,6 +169,9 @@ To search within files, use the command GREP. GREP is used to print lines of a f
  ./sample.txt: And then the third line. 
  $ # useful when you don't know which file contains the specific pattern that you are looking for
  
+ $ find file under /etc directory that contains the string 172.16.238.197 and save the answer in the file /home/bob/ip
+ $ sudo grep -ir 172.16.238.197 /etc/ > /home/bob/ip
+
  $ # print the lines of a file that don't match a pattern
  $ grep -v "printed" sample.txt
  This is the first line
@@ -249,18 +264,24 @@ To redirect standout output to a file instead of printing it on the screen, we c
   $ echo $SHELL > shell.txt
   $ cat shell.txt
   /bin/bash
+
+  $ # redirect dummy.service from /etc filesystem to /home/bob/dummy-service
+  $ echo /etc/systemd/system/dummy.service > /home/bob/dummy-service
  ```
-If you want to append STDOUT to an existing fil,e use the double forward arrow ">>" symbol. 
+If you want to append STDOUT to an existing file use the double forward arrow ">>" symbol. 
 In this case, the string, this is the bash shell, is appended to the existing shell.txt file.
  ```console
  $ echo "This is the Bash shell" >>shell.txt
  $ cat shell.txt
  /bin/bash
   This is the Bash shell
+
+ $ # create a new file at /home/bob/file_with_data.txt and content of the file is "a file in my home directory"
+ $ echo "a file in my home directory" > /home/bob/file_with_data.txt
  ```
 
 <h3>Redirect STDERR </h3>
-To redirect the error mesage, we need to use the number 3 followed by a foward arrow symbol and the name of the file
+To redirect the error mesage, we need to use the number 2 followed by a foward arrow symbol and the name of the file
 in which the errors will be written. If the file doesn't exist, a new one will be created. Otherwise, the file 
 will be overwritten.
  ```console
@@ -281,6 +302,9 @@ If you want your command to execute and not print error messages on the screen, 
 on the screen. 
 ```console
  $ cat missing_file 2> /dev/null
+
+ $ # run command python3 /home/bob/my_python_text.py and redirect the standard error to the file /home/bob/py_error.txt
+ $ # /home/bob/my_python_test.py does not exist so we have to use 2> /home/bob/py_error.txt
 ```
 
 <h3>Command Line Pipes</h3>
@@ -309,6 +333,7 @@ In this case, the less command will only display the pattern matched by the grep
   sample.txt (END)
  ```
 The differences is that the tee, the standard output is still printed on the screen before overriding the content of the file with the same string. 
+The linux tee command reads from standard input and write simultaneously to bot standard output (terminal screen) and one or more specified file.
  ```console
  $ echo $SHELL |tee shell.txt
  /bin/bash
@@ -316,7 +341,7 @@ The differences is that the tee, the standard output is still printed on the scr
  $ cat shell.txt
  /bin/bash
  ```
-Use tee -a ooption to append the file instead of overriding it. 
+Use tee -a option to append the file instead of overriding it. Using the -a or --append option to add new output to the end of an esixting file
  ```console
  $ echo "This is the bash shell"| tee -a shell.txt
  This is the bash shell
