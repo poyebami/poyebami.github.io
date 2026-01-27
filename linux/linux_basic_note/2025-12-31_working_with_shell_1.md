@@ -93,7 +93,7 @@
   $ touch <file_name> # can create multiple like mkdir
 
   $ more <file_name> # view text files in a scrollable manner
-  $ less <file_name> # view the content of a gile and navigate through the file
+  $ less <file_name> # view the content of a file and navigate through the file
   
   $ whatis <command> # displays a one-line decription of what a command does
   
