@@ -5,7 +5,7 @@
    * [2026-01-15 Linux Core Concepts](linux_basic_note/2026-01-15_linux_core_concepts.md)
    * [2026-01-20 Package Management Intro](linux_basic_note/2026-01-20_package_management_intro.md)
    * [2026-01-21 Working with Shell 2](linux_basic_note/2026-01-21_working_with_shell_2.md)
-   * [2026-01-26 Networking](linux_basic_note/2026-01-27_networking.md)
+   * [2026-01-27 Networking](linux_basic_note/2026-01-27_networking.md)
 - ## Text Editor
    * [2026-01-01 VI Editor](text_editor_note/2026-01-01_vi_text_editor.md)
    * [2026-01-26 VI Editor2](text_editor_note/2026-01-26_vi_text_editor_2.md)
