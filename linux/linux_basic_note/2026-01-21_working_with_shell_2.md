@@ -296,10 +296,32 @@ for the second command. The pipes are defined using the vertical bar symbol.
 
  $ less file.txt
  ```
-Making use of the piple, the output of the command grep hello sample.txt become the standout input for the less command
+Making use of the pipe, the output of the command grep hello sample.txt become the standout input for the less command that follows a f ter the operatior.
+In this case, the less command will only display the pattern matched by the grep command before the pipe as compared to the entire file.
  ```console
  $ grep Hello sample.txt | less
  Hello There!
-  (END)
-  
+  (END) 
+
+ $ less sample.txt
+ hello  there!
+  Nice to see you here!
+  sample.txt (END)
+ ```
+The differences is that the tee, the standard output is still printed on the screen before overriding the content of the file with the same string. 
+ ```console
+ $ echo $SHELL |tee shell.txt
+ /bin/bash
+
+ $ cat shell.txt
+ /bin/bash
+ ```
+Use tee -a ooption to append the file instead of overriding it. 
+ ```console
+ $ echo "This is the bash shell"| tee -a shell.txt
+ This is the bash shell
+
+ $ cat shell.txt
+ /bin/bash
+ This is the Bash shell
  ```
