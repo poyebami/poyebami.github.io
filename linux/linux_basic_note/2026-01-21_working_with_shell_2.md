@@ -142,7 +142,7 @@ To search within files, use the command GREP. GREP is used to print lines of a f
  ```
  ```console
  $ # print out lines matching the search pattern
- $ grep second samiple.txt
+ $ grep second sample.txt
  Followed by the second line
 
  $ # the grep command is also case sensitive
@@ -221,4 +221,85 @@ Match a pattern that form whole words
  4 Manchester City
  ```
 <h3>IO Redirection </h3>
-There are three data streams created when you launch a linux command. 
+There are three data streams created when you launch a linux command.
+
+STDIN is the standard input steam. It accepts text as its input.
+ ```console
+  $ cat sample_text.txt   <<--- Standard Input
+ This is the file content
+ ```
+
+STDOUT is the text output from the command printed 
+ ```console
+  $ cat sample_text.txt
+ This is the file content   <<--- Standard Output
+ ```
+Error messages from the command are sent through the standard error steam.
+ ```console
+  $ cat simple_text.txt
+ This is the file content
+ cat: simple_text.txt : No such file or directory
+ ```
+With IO redirection, the standard input, output, and error can  be redirected to text files. 
+
+<h3>Redirect STDOUT </h3>
+To redirect standout output to a file instead of printing it on the screen, we can use the forward arrow
+">" symbol by the name of the file. The forward arrow symbol overwrites the content of the file with the STDOUT
+ ```console
+  $ echo $SHELL > shell.txt
+  $ cat shell.txt
+  /bin/bash
+ ```
+If you want to append STDOUT to an existing fil,e use the double forward arrow ">>" symbol. 
+In this case, the string, this is the bash shell, is appended to the existing shell.txt file.
+ ```console
+ $ echo "This is the Bash shell" >>shell.txt
+ $ cat shell.txt
+ /bin/bash
+  This is the Bash shell
+ ```
+
+<h3>Redirect STDERR </h3>
+To redirect the error mesage, we need to use the number 3 followed by a foward arrow symbol and the name of the file
+in which the errors will be written. If the file doesn't exist, a new one will be created. Otherwise, the file 
+will be overwritten.
+ ```console
+ $ cat missing_file 2> error.txt
+ $ cat error.txt
+ cat: missing_file: No such file or directory
+ ```
+To append the standard error to an existing file, use the number 2 double forward symbol.
+ ```console
+ $ cat missing_file 2>> shell.txt
+ $ cat shell.txt
+ /bin/bash
+ This is the Bash shell
+ cat: missing file: No such file or directory
+ ```
+If you want your command to execute and not print error messages on the screen, even if it generates a standard error, you can redirect to /dev/null
+/dev/null is referred to as the bit bucket, the place where you dump anything you don't need, in the case, the standard error, which we do not want to be printed
+on the screen. 
+```console
+ $ cat missing_file 2> /dev/null
+```
+
+<h3>Command Line Pipes</h3>
+Redirecting date to a file to be later comsumed by another command can be a tedious process. We can overcome this by making use of command line pipes. 
+Command line pipes allow the linking of multiple commands. In simple terms, pipes allow the first command's standard out to be used as the standard input
+for the second command. The pipes are defined using the vertical bar symbol.
+ ```console
+ $ cat sample.txt
+ hello there!
+  Nice to see you here!
+
+ $ grep Hello sample.txt > file.txt
+
+ $ less file.txt
+ ```
+Making use of the piple, the output of the command grep hello sample.txt become the standout input for the less command
+ ```console
+ $ grep Hello sample.txt | less
+ Hello There!
+  (END)
+  
+ ```
