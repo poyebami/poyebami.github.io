@@ -8,7 +8,7 @@
    * [2026-01-27 Networking](linux_basic_note/2026-01-27_networking.md)
 - ## Text Editor
    * [2026-01-01 VI Editor](text_editor_note/2026-01-01_vi_text_editor.md)
-   * [2026-01-26 VI Editor2](text_editor_note/2026-01-26_vi_text_editor_2.md)
+   * [2026-01-26 VI Editor 2](text_editor_note/2026-01-26_vi_text_editor_2.md)
 
 - ## GIT 
    * [2026-01-03 GIT for Beginners](git_note/2026-01-03_git_for_beginners.md)
