@@ -102,6 +102,9 @@
   $ vi # file editor
 
   $ clear # clears the visible screen
+
+  $ # switch to superuser
+  $ sudo su
   ```
   
 <h3> Absolute and Relative Path </h3>
