@@ -47,6 +47,10 @@ www.google.com. And then ping Google, and will get a response from system B.
   64 bytes from www.goggle.com (192.168.1.11): icmp_seq=1 tt1=64 time=0.052 ms
   64 bytes from www.google.com (192.168.1.11): icmp_seq=2 tt1=64 time=0.079 ms
  ```
+ ```console
+ $ # change DNS server to Google's DNS 
+ $ vi /etc/resolv.conf
+ ```
 We have two names pointing to the same system. One is db and the other is google. We can use either name to reach system B. Translating host name
 to IP address in the etc/hosts file is called `name resolution`. Ping may not always be a good command to test DNS resolution, especially if
 ping is disabled on the other host. A work around will be using nslookup and dig.
@@ -61,7 +65,8 @@ of its own /etc/hosts file.
 For instance, our DNS server has the IP 192.168.1.100. Every host has a DNS resolution configuration file at /etc/resolv.conf. You add an entry into it
 specifying the address of the DNS server.
  ```console
- $ cat /etc/reslov.conf
+ $ # find the ip address of the DNS Server
+ $ cat /etc/resolv.conf
  nameserver     192.168.1.100
 
  $ ping db
@@ -80,7 +85,10 @@ A system is able to use hostname to IP mapping from its hosts file locally as we
 another in DNS? For instance, I have an entry in my local files set to 192.168.1.115 called test and someone added an entry for the same host called test to 192.168.1.116 on the 
 DNS server. The host files looks at the local /etc/hosts file and the looks at the name server. If it finds the entry in the local hosts file, it uses that. If not, it looks for that in
 the DNS server. But that order can be changed. The order is defined by an entry in the file /etc/nsswitch.conf, the line with the host entry.  
-
+ ```console
+ $ # change the order of resolution 
+ $ vi /etc/nsswitch.conf
+ ```
  ```console
  cat /etc/nsswitch.conf
  ...
@@ -177,3 +185,87 @@ Remember that nslookup does not consider the entries in the local /etc/hosts fil
  $ dig www.google.com
  ... more detail information
  ```
+
+<h1>Networking Basics</h1>
+
+<h3>Switching</h3>
+Let say there are two system (A and B). How does system A reach B? We connect them to a `switch`, and a switch creates a network containing the two systems. To connet them to a
+switch, we need an interface on each host, physical or virtual depending on the host. To see the interfaces for the host, we use the IP link command.
+ ```console
+ $ # to see the interface for the host, in this case eth0
+ $ ip link 
+ eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_code1 state UP mode
+ DEFAULT group default qlen 1000
+ ```
+Let's assume it's a network with the address 192.168.1.0. We then assign the systems with IP addresses on the same network. For this, we use the command
+ ```console
+ $ # adding the systems with their own IP address to the same network, in this case eth0
+ 
+ $ # systemA
+ $ ip addr add 192.168.1.10/24 dev eth0
+ 
+ $ # systemB
+ $ ip addr add 192.168.1.11
+ ```
+
+<h3>Routing </h3>
+There is another network containing systemC and systemD at the address 192.168.2.0. How does a system in one network reach a system in the other? 
+How does systemB with the IP 1.11 reach systemC with the IP 2.10 on the other network?  That is where a router comes in. A router helps connect two network
+together. Think of it as another server with many network ports. Since it connects to the two separate networks, it gets two IPs assigned, one on each network.
+
+When systemB tires to send a packet to system  C, how does it know where the router is on the network to send the packet through? The router is just another device
+on the network. That's where we configure the systems with a gateway or a route. If the network was a room, the gateway is the door to the outside world, to other
+networks, or the internet. The systems need to know where the door is to go through that. To see the existing routing configuration on a system, run the route command.
+ ```console
+ $ # displays the kernel's routing table
+ $ route
+ Kernel IP routing table
+ Destination    Gateway     Genmask     Flags Metric Ref    Use Iface
+ $ # here we see that there is connections
+ ```
+ ```console
+ $ # configure a gateway on a system from a different network
+ $ ip route add 192.168.2.0/24 via 192.168.1.1
+ 
+ $ # after connecting the two networks
+ $ route                                                                                                                                                                                                                                                                                                                
+ Kernel IP routing table                                                                                                                                                                                                                                                                                                
+ Destination    Gateway          Genmask            Flags Metric Ref    Use Iface   
+ 192.168.2.0    192.168.1.1      255.255.255.0      UG    0      0        0 eth0  
+ ```
+ We have to configure it on all systems.
+
+These systems need access to the internet. Say they need access to Google at 172.217.194.0 network on the inernet, so you connect the routher to the internet, and then add 
+a new route in your routing tavle to route all traffic to the network 172.217.194.0 through your router.
+ ```console
+ $ ip route add 172.217.194.0/24 via 192.168.2.1
+
+ $ # adds default via 192.168.2.1
+ $ ip route add default via 192.168.2.1
+ ```
+Instead of the word default, you could also say 0.0.0.0. It means any IP destination. 
+
+Let say there is another router in your network, one the internet and another for internal private networks. You will need to have two seperate entries for each network, one entry for the internal
+private network and another default gateway for all other networks. 
+
+<h3>Networking Commands </h3>
+ ```console
+ $ # list and modify interfaces on the host
+ $ ip link 
+
+ $ # see the IP address assigned to these interface
+ $ ip addr
+
+ $ # use to set IP addresses on the interface
+ $ ip addr add 192.168.1.10/24 dev eth0
+
+ $ # changes made using these commands are only valid till a system restart. 
+ $ # if you want to persist these changes, you must set them in the /etc/network/interfaces file.
+
+ $ # view the routhing table
+ $ route
+ $ ip route
+
+ $ # add entries into the routing table
+ $ ip route add 192.168.1.0/24 via 192.168.
+ ``` 
