@@ -147,7 +147,7 @@ under /etc/resolv.conf and have now introduced more standard domains like web.my
 is no record by the name web on my DNS server. Instead, it is web.mycomapny.com and must use it to ping it. However, if you want to use web instead of web.mycomapny.com, you make an entry
 into your host's /etc/resolve.conf file called search and s epcify the domain name you want to append.
  ```console
- $ cat >> /etc/resolve.conf
+ $ cat >> /etc/resolv.conf
  nameserver         192.168.1.100
  search             mycompany.com
 
@@ -238,10 +238,17 @@ networks, or the internet. The systems need to know where the door is to go thro
 These systems need access to the internet. Say they need access to Google at 172.217.194.0 network on the inernet, so you connect the routher to the internet, and then add 
 a new route in your routing tavle to route all traffic to the network 172.217.194.0 through your router.
  ```console
+ $ # add a route to 172.217.194.0/24 via the gateway at 192.168.2.1
  $ ip route add 172.217.194.0/24 via 192.168.2.1
 
  $ # adds default via 192.168.2.1
  $ ip route add default via 192.168.2.1
+
+ $ # add a default route (for all address)  via the local gateway 192.168.1.1 that can be reached on device em1
+ $ ip route add default via 192.168.1.1 dev em1
+
+ $ # add a route to 192.168.1.0/24 that can be reached on device em1
+ $ ip route add 192.168.1.0/24 dev em1
  ```
 Instead of the word default, you could also say 0.0.0.0. It means any IP destination. 
 
@@ -250,6 +257,18 @@ private network and another default gateway for all other networks.
 
 <h3>Networking Commands </h3>
  ```console
+ $ # display ip commands and arguments
+ $ ip help
+ 
+ $ # diplay address commands and arguments 
+ $ # ip addr help
+
+ $ # display link commands and arguments
+ $ ip link help
+
+ $ # display neighbour commands and arguments
+ $ ip neigh help
+
  $ # list and modify interfaces on the host
  $ ip link 
 
@@ -268,4 +287,21 @@ private network and another default gateway for all other networks.
 
  $ # add entries into the routing table
  $ ip route add 192.168.1.0/24 via 192.168.
+
+ $ # alter the status of the interface
+ $ # bring em1 online
+ $ ip link set em1 up
+
+ $ # bring em1 offline
+ $ ip link set em1 down
+
+ $ # set the MTU on em1 to 9000
+ $ # MTU (maximum transmission unit) defines the largest packet size (in bytes) allowed over an interface , with the standard Ethernet default being 1500
+ $ # configuring an MTU of 9000 units (Jumbo Frames) can increase throughout for large data transfers but requires support from all networking equipment (switches, routers) in the path
+ $ ip link set em1 mtu 9000
+
+ $ # enable promiscuous mode of em1
+ $ # promiscuous mode in linux allows a network interface card (NIC) to pass all receieved traffic to the operating system, regardless of the destination MAC address.
+ $ # crucial for network sniffing, bridging (VMware/KVM), and monintoring.
+ $ ip link set em1 promisc on
  ``` 
