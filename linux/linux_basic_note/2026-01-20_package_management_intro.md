@@ -55,6 +55,13 @@ Each of these modes can be run using the rpm command followed by specific comman
     
     "h" stands for hash marks. shows progress with #######
  
+ `Telnet` command in linux is a command-line utility used for remote communication and network troubleshooting, primarily to test connectivity to specific TCP port.
+  ```console
+  $ telnet [host] [port]
+  
+  host : the IP address or domain name of the remote server you want to connect to
+  port : the port number on the remote host to connect to. If not specified, telnet uses the default port 23
+  ```
  * Uninstalling 
     ```console
      $ # uninstalling a package
