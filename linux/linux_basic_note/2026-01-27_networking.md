@@ -305,3 +305,80 @@ private network and another default gateway for all other networks.
  $ # crucial for network sniffing, bridging (VMware/KVM), and monintoring.
  $ ip link set em1 promisc on
  ``` 
+
+<h1>Troubleshooting Network</h1>
+
+<h3>Checking Host's IP connectivity</h3>
+Check the local interface by running the IP link command and ensure the primary interface is up. 
+ ```console
+ $ ip link
+ 1. lo <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc
+   ...
+
+ 2. enp1s0f1: <BROADCAST, BROADCAST, MULTICAST, UP> mtu 1  500 qdisc
+     fq_code1 state UP mode DEFAULT group default qlen 1000
+     link/ether 08:97:98:6e:55:4d brd ff:ff:ff:ff:ff:ff
+ ```
+ We can see that enq1s0f1 is up
+
+<h3>Checking DNS Resolution</h3>
+Run an nslookup command aganist the hostname and make sure it is resolving to a valid IP. Make sure everything is correct
+ ```console
+ $ nslookup caleston-repo-01
+ Server:        192.168.1.100
+ Address:       192.168.1.100 #53
+
+ Non-authoritative answer:
+ Name:  caleston-repo-01
+ Address: 192.168.2.5
+ ```
+<h3>Check Connectivity</h3>
+Try to ping the remote server to check if we get a response. 
+ ```console
+ $ ping caleston-repo-01
+ PING caleston-repo-01 (192.168.2.5) 56(84) bytes of data.
+ ^C
+ --- localhost ping statistics ---
+ 3 packets transmitted, 0 received, 100% packet lost, time 2034ms
+ ```
+ There is no response. We send three packets and receieved zero back. There is a 100% packet loss. Ping is not the best way to check
+ for connectiviity becuase many networks would have disabled it. 
+
+<h3>Checking the route</h3>
+To troubleshoot an issue with the route, we run the traceroute command. 
+ ```console
+ $ # show the number of hops, or devices, between the source, the system and the repo server
+ $ # show problem with any of the devices in the network route between the source and destination
+ $ traceroute 192.168.2.5
+ Tracing route to example.com [192.168.2.5]
+ over a maximum of 30 hops: 
+ 1  <1 ms   <1 ms   <1 ms   192.168.1.1
+ 2  <2 ms   <1 ms   <1 ms   192.168.2.1
+ 3   *       *       *      Request timed out.
+ ```
+ From the output, we see that there is two routers, the first one at 192.168.1.1 and the second at 192.168.2.1. The connection to both 
+ of them is okay. However, the request timed out between the second router and the server.
+ 
+<h3>Checking Service</h3>
+Check if the HTTP process is running on port 80. We use the netstat command.
+ ```console
+ $ # print the information of network connections, routing tables, and several other network statistics
+ $ netstat -an  | grep 80   | grep -i Listen
+ tcp6   0   0 :::80     :::*        Listen
+ ```
+
+<h3>Checking Interfaces</h3>
+Checking the interface using IP link command.
+ ```console
+ $ ip link
+ 1: lo <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc
+    ...
+
+ 2. enp1s0f1: <BROADCAST, BROADCAST, MULTICAST, UP> mtu 1500 qdisc
+     fq_code1 state DOWN mode DEFAULT group default qlen 1000
+     link/ether 08:97:98:34:52:12 brd ff:ff:ff:ff:ff:ff
+ ```
+In this case, the interface is down. We enable UP using IP link set dev up command
+ ```console
+ $ ip link set dev enp1s0f1 up
+ ```
