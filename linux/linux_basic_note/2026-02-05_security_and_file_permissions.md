@@ -1,5 +1,4 @@
 <h1>Security and File Permissions</h1>
-
 There are many ways to secure the linux operating system.
 
 `Access Control` methods make use of the user and password-based authentication to determine who can access the system. 
@@ -15,7 +14,6 @@ access to the server.
 `SELinux` makes use of security policies for isolating applications running on the same system from each other to project the linux server.
 
 <h3>Linux Accounts</h3>
-
 Every user in linux has a associated account. The `user account` maintains information such as the username and password. A user account also has an unique identifier called
 UID (user ID). The information about the user account is found in /etc/passwd file
  ```console
@@ -42,4 +40,29 @@ by running the ID command followed by the usrename.
  $ id "user"
  $ id michael
  uid=1001(michael) gid=1001(michael)groups=1001(michael), 1003(developers)
+ 
+ $ # check the home directory path and the default shell assigned to the user
+ $ grep -i michael /etc/passwd
+ michael:x:1001:1001::/home/michael:/bin/sh
+ ```
+<h3>Account Types</h3>
+`User Account` is individual people who need access to the linux system.
+
+A `Superuser Account` is the root, whichhas the UID zero. The superuser has unrestircted access to and control over the system, including other users.
+
+`System Account` are usually created during the OS installation and for use by software and services that will not run as teh superuser. The UID is usually under 100 or
+between 500 and 1000. They usually do not have a dedicated home directory. If they do the home directory is not created under /home. SSHD and the mail user are exaomple of the 
+system account. 
+
+`Service Account` are similar to system account and are created when services are installed in linux. NGINX service makes use of a service account called NGINX. 
+ ```console
+ $ # see the list of users currently logged into the system
+ $ who
+ bob        pts/2       Apr 28 06:48  (172.16.238.187)
+
+ $ # displays the record of all logged-in users.
+ $ last
+ michael        :1  :1                       Tue May 12 20:00 still logged in
+ sarah          :1  :1                       Tue May 12 12:00 still running
+ reboot        system boot 5.3.0-758-gen     Mon May 11 13:00 - 19:00 (06:00)
  ```
