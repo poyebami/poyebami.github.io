@@ -202,3 +202,62 @@ In these files, each line represents information about a particular user or a gr
  developer:x:1001:bob,michael
  NAME:PASSWORD:GID:MEMBERS
  ```
+
+<h3>User Management </h3>
+Commands used to create and manage user accounts in linux
+
+ ```console
+ $ # used by system admins to create a new local user 
+ $ useradd bob
+
+ $ # set the password for the user
+ $ passwd bob
+ Changing password for user bob.
+ New UNIX password:
+ Retype new UNIX password:
+ passwd: all authentication tokens updated
+ successfully.
+
+ $ # both these commands need to be run as root
+ 
+ $ # once logged in, user can check the user ID
+ $ whoami
+ bob
+
+ $ # change their own password from the shell. no arguments
+ $ passwd
+ Changing password for bob.
+ (current) UNIX password:
+ Enter new UNIX password:
+ Retype new UNIX password:
+ passwd: password updated successfully
+ ```
+Using the useradd with options
+ ```console
+ $ useradd -u 1009 -g 1009 -d /home/robert -s /bin/bash -c "Mercury Project member" bob 
+
+ -c : custom commands
+ -d : custom home directory
+ -e : expiry date
+ -g : specific GID
+ -G : create user with multiple secondary groups
+ -s : specify login shells
+ -u : specific UID
+
+ we can use the id command to validate that the custom fields were set
+ 
+ we can also verify the custom comments have been created by inspecting
+ the password file and checking the fields for user's account
+ $ grep -i bob /etc/passwd
+ bob:x:1009:1009:Mercury Project Member: /home/robert: /bin/bash
+ ```
+ ```console
+ $ # delete a user account
+ $ userdel bob
+
+ $ # add a new linux group
+ $ groupadd -g 1011 developer
+
+ $ # delete group 
+ $ groupdel devloper
+ ```
