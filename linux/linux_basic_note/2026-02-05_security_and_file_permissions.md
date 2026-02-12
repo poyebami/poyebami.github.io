@@ -139,4 +139,66 @@ It is a added security measure that prevents other users from running commands a
  ```
 
 <h3>Access Cotnrol Files</h3>
+Most of the access control files in linux are stored under the /etc directory. Only the root user has access to write to it. The access control 
+files are designed in a way that they should never be modified using a text editor. 
 
+Basic access control files in linux
+ ```console
+ /etc/passwd does not save any passwords
+ $ grep -i ^bob /etc/passwd
+ /bob:x:1001:1001::/home/bob:/bin/bash
+
+ /etc/shadow stores passwords and its is hashed
+ $ grep -i ^bob /etc/shadow
+ /bob:$6$0h0utot0$5JcuRxR7y72LLQk4Kdog7u09
+ YcWF/7....
+
+ /etc/group sores information about all user groups 
+ $ # such as group name, GID, and memebers
+ $ grep -i ^bob /etc/group
+ developer:x:1001:bob,michael
+ ```
+In these files, each line represents information about a particular user or a group
+ ```console
+ /etc/passwd
+ $ grep -i ^bob /etc/passwd
+ bob:x:1001:1001::/home/bob:/bin/bash
+ USERNAME:PASSWORD:UID:GID:GECOS:HOMEDIR:SHELL
+ 
+ $ # the password field is x because it is store in /etc/shadow file
+ 
+ $ # Geckos is a CSV format, or a comma-separated list of user information 
+ $ # such as name, locatio, phone number, etc
+ 
+ $ # Geckos is optional and can be blank
+ ```
+
+ ```console
+ /etc shadow
+ $ grep -i ^bob /etc/shadow
+ /bob:$6$0h0utot0$5JcuRxR7y72LLQk4Kdog7u09
+ YcWF/7...
+ USERNAME::PASSWORD:LASTCHANGE:MINAGE:MAXAGE:WARN:INACTIVE:EXPDATE
+
+ $ # password, contrained the encrypted password. "hashed"
+ 
+ $ # * or empty field implies that password was never set for this user
+ 
+ $ # last change is in epoch, number of seconds that has elapsed since midnight, January 1, 1970
+ 
+ $ # warn is number of days before a password is going to expire that the user 
+ $ # should be warned so that they can change the password
+ 
+ $ # inactive is the number of days after a password has expired that it should still be accepted
+ 
+ $ # before being disabled
+
+ $ # expdate is the date when the account will be expired 
+ ```
+
+ ```console
+ /etc/group
+ $ grep -i ^bob /etc/group
+ developer:x:1001:bob,michael
+ NAME:PASSWORD:GID:MEMBERS
+ ```
