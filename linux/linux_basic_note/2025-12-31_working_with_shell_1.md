@@ -105,6 +105,12 @@
 
   $ # switch to superuser
   $ sudo su
+
+  $ # search for specific text within files
+  $ grep "search_string" filename
+  
+  $ # search and ingore case- sensitivity 
+  $ grep -i "search_string" filename
   ```
   
 <h3> Absolute and Relative Path </h3>
