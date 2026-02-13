@@ -261,3 +261,102 @@ Using the useradd with options
  $ # delete group 
  $ groupdel devloper
  ```
+<h3>Linux File Permission</h3>
+The first letter of the first colume in the listing from an ls -l command indicates the file types
+ ```console
+ $ ls -l bash-script.sh
+ -rwxrwxr -x 1 bob bob 89 Mar 17 01:35 bash-script.sh
+ ```
+In this case, the "-" implies the file called bash-script.sh is a file.
+ ```console
+  File Type                    Identifier
+  Directory                    d
+  Regular File                 -
+  Character Device             c
+  Link                         |
+  Socket File                  s
+  Pipe                         p
+  Block Device                 b
+ ```
+What does the other characters such as rwx in the first column mean? 
+ ```console
+ $ ls -l bash-script.sh
+ -rwxrwxr -x 1 bob bob 89 Mar 17 01:35 bash-script.sh
+ ```
+These characters describle the file permissions in linux. They can be broken down as the owner permssions, group permissions, and permissions for others.
+
+The first three characters after the file identifers are the permissions for the owner of the file, denoted by the letter u. 
+ ```console
+ -rwx
+ ```
+The next three characters are permissions of the group owning the file, denoted by a g.
+ ```console
+ rwx
+ ```
+The last three characters are the permissions for all other users, denoted by o.
+ ```console
+ r-x
+ ```
+When a r bit is set, the respective user has read permissions to the file. It has the octal value of 4.
+
+When a w bit is set, they have write permissions to the file, with an octal value of 2.
+
+When a x bit i set, the user has the execute permissions for the file, which has an octal value of 1. 
+
+```console
+ BIT                PURPOSE                 OCTAL VALUE
+ r                  Read                    4
+ w                  Write                   2
+ x                  Execute                 1
+```
+<h3>Directory Permissions </h3>
+With directories, the same set of permissions that we saw for the file are still applicable. 
+```console                                                                                                                                                                                                                                                                                                              
+ BIT                PURPOSE                 OCTAL VALUE                                                                                                                                                                                                                                                                 
+ r                  Read                    4                                                                                                                                                                                                                                                                           
+ w                  Write                   2                                                                                                                                                                                                                                                                           
+ x                  Execute                 1
+ -                  No permission           0
+```
+R bit allows the user to read the contents of the directory. 
+
+W bit allows the user to write operation in the directory.
+
+For example: the directory is owned by Bob, the owner has only the execute permission.
+``` console
+ $ ls -ld /home/bob/random_dir
+ d--xrwxrwx 1 bob bob 89 Mar 17 01:35
+ $ # here --x means that bob only has the execute permissions. 
+```
+If Bob tires to list the content of the directory, he will get a permission denied error.
+```console
+ $ ls /home/bob/random_dir
+ ls: cannnot open directory 'random_dir/': Permission denied
+```
+Despite being the owner of the directory, Bob does not have the read access to it . (--x)
+All other users have full access to this directory, because they have the read, write, and execute bits set for them (rwx)
+Bob can 'cd' into the directory, since the directory has the x bit set for the owner (--x).
+However, Bob is part of the group called Bob, that has full acces to the directory.
+
+He doen't have access to them because in linux, the system identifies the user trying to access the file or direcotry and checks the permission sequentially. (following the logical order or sequence)
+If the user trying to access is the owner, the owner's permissions for the file are applied, and the rest is ignored. (-xxrwxrwx). In this case (--x) is the first three characters and is meant for the owner.
+If the user is not the owner but part of the group, only the group permissions are applied. The others are ignored. (--xrwxrwx). In this case (rwx) is the next three characters and is meant of the group.
+Octal value (base-8 numbers) are primarily used as a shorthand, numeric representation for managing file permissions. 
+Calculating octal value by adding the values of the granted permissions. 
+* rwx (read, write,execute) = 4+2+1=7
+* rw- (read, write, no execute) = 4+2+0=6
+* r-x (read, no write, execute) = 4+0+1 = 5
+* r-- (read only) = 4+0+0=4
+* --- (no permissions) = 0+0+0=0
+
+A standard, three-digit octual value is sued to specify permissions for three different user classes in order:
+* 1. Owner (user)
+* 2. Group
+* 3. Others (Everyone else)
+ ```console
+  octal vlaue 755 means:
+
+  Owner : 7  (rwx) = full permissions
+  Group : 5  (r-x) = read and execute
+  Other : 5  (r-x) = read and execute
+ ```
