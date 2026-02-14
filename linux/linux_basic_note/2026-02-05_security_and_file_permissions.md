@@ -369,18 +369,49 @@ The command used to modify the permissions of a file is called chmod. The syntax
  ```
  Permissions can be modified in two ways, symbolic mode and numeric mode. 
 
- In symbolic mode, the first characters following the chmode command specify whose permission you want to alter. 
+<h4>Symbolic Mode</h4>
+In symbolic mode, the first characters following the chmode command specify whose permission you want to alter. 
  ```console
- $ # provide full access to Owner
- $ chmod u+rwx text-file
+ $ # provide full access to Owners
+ $ chmod u+rwx test-file
 
- $ # provide Read access to owner, group, and others, remove execute access
- $ chmod ugo+r-x text-file
+ $ # provide Read access to owners, group, and others, remove execute access
+ $ chmod ugo+r-x test-file
 
  $ # removes all access to others
- $ chmod o-rwx text-file
+ $ chmod o-rwx test-file
 
  $ # provides full access to owner, add read, remove execute for group and no access for others
- $ # chmod u+rwx, g+r-x, o-rwx test-file
+ $ chmod u+rwx, g+r-x, o-rwx test-file
  ```
- After the characters, you need to specify if you wnat to grant access with the "+" symbol or revoke existing access with the "-" symbol.
+After the characters, you need to specify if you want to grant access with the "+" symbol or revoke existing access with the "-" symbol.
+
+<h4>Numeric Mode</h4>
+In numeric mode, we can specify the permissions to be updates in terms of the three-digit octal values. 
+ ```console
+ $ # provide full access to owners, group, and others 
+ $ chmod 777 test-file
+
+ $ # provide read and execute access for owners, group, and others
+ $ chmod 555 test-file
+
+ $ # provide read and write access for owners and group, and no access for others
+ $ chmod 660 test-file
+ 
+ $ # provide full access for owners, read and execute for group, and no access for others
+ $ chmod 750 test-file
+ ```
+<h4>Changing ownership and group</h4>
+To change the ownership and group we must use the chown command. The syntax is chown, followed by the new owner, and group, separated by a colon, and finally the file or directory.
+ ```console
+ $ chown owner: group file
+
+ $ # changing the owner to bob and group to developer
+ $ chown bob:developer test-file
+
+ $ # changes just the owner of the file to Bob. Group unchanged
+ $ chown bob andoid.apk
+
+ $ # change the group for the test-file to the group called android
+ $ chgrp android test-file
+ ```
