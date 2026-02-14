@@ -333,6 +333,7 @@ If Bob tires to list the content of the directory, he will get a permission deni
  $ ls /home/bob/random_dir
  ls: cannnot open directory 'random_dir/': Permission denied
 ```
+<h3>Octal Value</h3>
 Despite being the owner of the directory, Bob does not have the read access to it . (--x)
 All other users have full access to this directory, because they have the read, write, and execute bits set for them (rwx)
 Bob can 'cd' into the directory, since the directory has the x bit set for the owner (--x).
@@ -350,13 +351,36 @@ Calculating octal value by adding the values of the granted permissions.
 * --- (no permissions) = 0+0+0=0
 
 A standard, three-digit octual value is sued to specify permissions for three different user classes in order:
-* 1. Owner (user)
-* 2. Group
-* 3. Others (Everyone else)
+* Owner (user)
+* Group
+* Others (Everyone else)
+ 
  ```console
-  octal vlaue 755 means:
+  octal value 755 means:
 
   Owner : 7  (rwx) = full permissions
   Group : 5  (r-x) = read and execute
   Other : 5  (r-x) = read and execute
  ```
+<h3>Modifying File Permissions</h3>
+The command used to modify the permissions of a file is called chmod. The syntax to use this command is chmod, followed by permission and finally the filename.
+ ```console
+ $ chmod <permission> filename
+ ```
+ Permissions can be modified in two ways, symbolic mode and numeric mode. 
+
+ In symbolic mode, the first characters following the chmode command specify whose permission you want to alter. 
+ ```console
+ $ # provide full access to Owner
+ $ chmod u+rwx text-file
+
+ $ # provide Read access to owner, group, and others, remove execute access
+ $ chmod ugo+r-x text-file
+
+ $ # removes all access to others
+ $ chmod o-rwx text-file
+
+ $ # provides full access to owner, add read, remove execute for group and no access for others
+ $ # chmod u+rwx, g+r-x, o-rwx test-file
+ ```
+ After the characters, you need to specify if you wnat to grant access with the "+" symbol or revoke existing access with the "-" symbol.
