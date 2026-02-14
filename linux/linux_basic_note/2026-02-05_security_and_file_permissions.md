@@ -324,6 +324,7 @@ W bit allows the user to write operation in the directory.
 
 For example: the directory is owned by Bob, the owner has only the execute permission.
 ``` console
+ $ # -ld shows detailed info about the directory, not its contents.
  $ ls -ld /home/bob/random_dir
  d--xrwxrwx 1 bob bob 89 Mar 17 01:35
  $ # here --x means that bob only has the execute permissions. 
