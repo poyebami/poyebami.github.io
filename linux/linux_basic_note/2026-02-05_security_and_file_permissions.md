@@ -416,3 +416,39 @@ To change the ownership and group we must use the chown command. The syntax is c
  $ # change the group for the test-file to the group called android
  $ chgrp android test-file
  ```
+ <h3>SSH</h3>
+SSH is used for logging into and executing commands on a remote computer. The command syntax is
+  ```console
+  $ ssh <hostname or IP address>
+  $ ssh <user>@<hostname or IP address>
+  $ ssh -l <user> <hostname or IP address>
+  ```
+The remote server should have an SSH service running and port 22 accessible from the client for the connection to work. Another requirement is a vaild username and password created on the remote
+system that you can use or something know as an SSH key that you can use to log into the remote machine without a password. 
+ ```console
+ [bob@caleston-lp10~0 $ ssh devapp01
+ bob@devapp01's password:
+ Last login: Tue Apr 7 20:08:58 2020
+ from 192.168.1.109
+ 
+ [bob@devapp01] $ # devapp01 is the hostname for the web server
+ ```
+ <h4>Password-Less SSH</h4>
+ We need to generate a key pair on the client. A key pair has to set of keys. The first is a private key. The key is the only you as the client will have and is not shared with anyone else. 
+ The second is the public key. It can be shared with others, including our remote server. When the public key is installed on the remote server, you can unlock it by connecting to it with a 
+ client that already has the private key. 
+
+ In other to connect to the remote server without having to put in a password. We need to create the key pair on the system using the SSH keygen command.
+  ```console
+  $ ssh-keygen -t rsa
+  Generating public/private rsa key pair.
+  Enter file in which to save the key (/home/bob/.ssh/id_rsa):
+  /home/bob/.ssh/id_rsa already exist.
+  Overwrite (y/n)? y
+  Enter passphrase (empty for no passphrase):
+  Enter same passphase again:
+  ...
+  ```
+In this case, the public key is stored at /home/bob/.ssh/id_rsa.pub. The private key is stored at /home/bob/.ssh/id_rsa file. 
+
+After getting the public key, we need to paste it to the remote server. To do this, we need to resort to password-based authentication at least once. 
