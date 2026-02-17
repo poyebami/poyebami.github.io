@@ -452,3 +452,42 @@ system that you can use or something know as an SSH key that you can use to log 
 In this case, the public key is stored at /home/bob/.ssh/id_rsa.pub. The private key is stored at /home/bob/.ssh/id_rsa file. 
 
 After getting the public key, we need to paste it to the remote server. To do this, we need to resort to password-based authentication at least once. 
+
+The easy way to do this is to use the command ssh-copy-id.
+ ```console
+ $ # after enter password to ssh-copy-id, you can access the remote server without ehtnering a password
+ $ # specify the user, and the remote server name or IP address
+ $ ssh-copy-id bob@devapp01
+ ```
+The public key is installed in the remote server. It is installed in a specific file called authorized_keys, which should be inside a hidden directory
+called .ssh inside your home directory on the remote server. 
+ ```console
+ $ cat /home/bob/.ssh/authorized_keys
+ ssh-rsa
+ "public key"
+ ```
+
+<h3>SCP</h3>
+Like how cp command copies files and directorys in the filesystem of linux, SCP copy data over ssh. You can copy files and directories between your system and any other 
+server to which you have SSH access. 
+ ```console
+ $ # copy a compressed file from your directory to the remote server
+ $ scp /home/bob/caleston-code.tar.gz devapp01:/home/bob
+ bob@devapp01's password:
+ caleston-code.tar.gz                   100% 2498KB 51MB/s 00.00
+ ```
+ Must have the permissions to write to the directory in the destination or the SCP command will fail with a premission denied error.
+ ```console
+ $ # no permission to write to the directory in the desntination
+ $ scp /home/bob/caleston-code.tar.gz devapp01:/root
+ bob@devapp01's password:
+ Scp /root/caleston-code.tar.gz: Permission denied
+ ```
+ ```console
+ $ # copy directories instead of file, use the -r option
+ $ # preserve the ownership and permissions of the source file, use -p
+ $ scp -pr /home/bob/media/ devapp01:/home/bob
+ bob@devapp01's password:
+ Caleston.jpg                           100% 3124KB 51.1MG/s 00.00
+ Random.png                             100% 2122KB 29.2MB/s 00.00
+ ```
