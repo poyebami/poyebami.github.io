@@ -458,10 +458,12 @@ The easy way to do this is to use the command ssh-copy-id.
  $ # after enter password to ssh-copy-id, you can access the remote server without ehtnering a password
  $ # specify the user, and the remote server name or IP address
  $ ssh-copy-id bob@devapp01
+ $ ssh-copy-id name@server_name
  ```
 The public key is installed in the remote server. It is installed in a specific file called authorized_keys, which should be inside a hidden directory
 called .ssh inside your home directory on the remote server. 
  ```console
+ $ # shows public key in remote server
  $ cat /home/bob/.ssh/authorized_keys
  ssh-rsa
  "public key"
@@ -478,7 +480,8 @@ server to which you have SSH access.
  ```
  Must have the permissions to write to the directory in the destination or the SCP command will fail with a premission denied error.
  ```console
- $ # no permission to write to the directory in the desntination
+ $ # no permission to write to the directory in the destination
+ $ must be in the location you are trying to send the file from...
  $ scp /home/bob/caleston-code.tar.gz devapp01:/root
  bob@devapp01's password:
  Scp /root/caleston-code.tar.gz: Permission denied
