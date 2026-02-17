@@ -455,7 +455,7 @@ After getting the public key, we need to paste it to the remote server. To do th
 
 The easy way to do this is to use the command ssh-copy-id.
  ```console
- $ # after enter password to ssh-copy-id, you can access the remote server without ehtnering a password
+ $ # after enter password to ssh-copy-id, you can access the remote server without entering a password
  $ # specify the user, and the remote server name or IP address
  $ ssh-copy-id bob@devapp01
  $ ssh-copy-id name@server_name
@@ -481,7 +481,7 @@ server to which you have SSH access.
  Must have the permissions to write to the directory in the destination or the SCP command will fail with a premission denied error.
  ```console
  $ # no permission to write to the directory in the destination
- $ must be in the location you are trying to send the file from...
+ $ # must be in the location you are trying to send the file from...
  $ scp /home/bob/caleston-code.tar.gz devapp01:/root
  bob@devapp01's password:
  Scp /root/caleston-code.tar.gz: Permission denied
