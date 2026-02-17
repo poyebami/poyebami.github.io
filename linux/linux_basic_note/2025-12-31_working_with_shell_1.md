@@ -111,6 +111,15 @@
   
   $ # search and ingore case- sensitivity 
   $ grep -i "search_string" filename
+
+  $ # copy files to a new location or create a copy in the same directory
+  $ cp source_file.txt destination_file.txt
+
+  $ # copy multiple files to a directory
+  $ cp file1.txt file2.txt /path/to/destination_directory/
+
+  $ # copy an entire direcotry, incluidng its contents and subdirectories
+  $ cp -r source_directory/ /path/to/destination_directory/
   ```
   
 <h3> Absolute and Relative Path </h3>
