@@ -9,6 +9,7 @@
    * [2026-02-05 Security and File Permissions](linux_basic_note/2026-02-05_security_and_file_permissions.md)
    * [2026-02-16 IPTABLES](linux_basic_note/2026-02-16_IPTABLES.md)
    * [2026-02-23 Useful Commands](linux_basic_note/2026-02-23_useful_commands.md)
+   * [2026-02-23 Cron Jobs](linux_basic_note/2026-02-23_cronjobs.md)
 
 - ## Text Editor
    * [2026-01-01 VI Editor](text_editor_note/2026-01-01_vi_text_editor.md)
