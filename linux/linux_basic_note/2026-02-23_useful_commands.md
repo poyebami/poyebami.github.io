@@ -15,3 +15,11 @@ Compares your local datebase with the list of pacakges you actually have install
 
 Using sudo apt update alone does not update your system, just your datebase. Using sudo apt upgrade alone can upgrade your system, but if you're using an older version of the database, you may not get the latest versions of your packages. Usually use both of these commands together,
 `sudo apt update && sudo apt upgrade`. This gives us the latest database and then upgrades our software to the latest version on that database, guaranteeing that you are completely up-to-date.
+
+<h3>Switching to the Root User</h3>
+ ```console
+ $ sudo i
+
+ $ # exit to return to normal user
+ $ # type EXIT or press Ctrl+D 
+ ```
