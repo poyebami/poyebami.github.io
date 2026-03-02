@@ -94,16 +94,111 @@ We need to add another service called install/
  ```
 
 <h3>Directives</h3>
-ExecStart= is a key directive in systemd unit file [Service] taht defines the command or scrpit to execute when a service is started. Can be sepecified multiple times, or used in conjuction with ExecStartPre= (commands before) and ExecStartPost = (commands after)
+`ExecStart`= is a key directive in systemd unit file [Service] that defines the command or scrpit to execute when a service is started. Can be sepecified multiple times, or used in conjuction with ExecStartPre= (commands before) and ExecStartPost = (commands after)
 
-User= allows unprivileged users to manage their own services and daemons. 
+`User`= allows unprivileged users to manage their own services and daemons. 
 
 *Daemons are background processes that operate independently of user interaction, typically starting at boot to manage system tasks, network requests, or services.
 
-Restart= restart a SYSTEMD service.
+`Restart`= restart a SYSTEMD service.
 
-RestartSec= specify the amount of time to wait before attempting to restart a service. The default delay is 100ms.
+`RestartSec`= specify the amount of time to wait before attempting to restart a service. The default delay is 100ms.
 
-WantedBy = specifies which other unit(s) should start the current serbice or unit whn the listed united is enabled via systemct1 enable. It defines a weak dependency. 
+`WantedBy`= specifies which other unit(s) should start the current serbice or unit whn the listed united is enabled via systemct1 enable. It defines a weak dependency. 
 
 *Weak dependency means if the "wanted" unit fails to start or stop, the "wanting" unit (the target) will continue to run. The most common value for WantedBy = in a standard service unit is multi-user.target. This means the service should be stated when the system reaches the non-graphical multi-user state. 
+
+<h3>SystemD Tools</h3>
+The two major tools we will see are the `systemctl` and `journalctl`.
+
+<h4>Systemctl </h4>
+ ```console
+ Manage system state on systemd managed server
+ START/STOP/RESTART/RELOAD a service
+ ENABLE/DISABLE a service to start during the system boot
+ Used to view information about and manage the system state
+ List and manage Units 
+ List and update Targets
+ ```
+ Useful systemctl commands
+ ```console
+ $ # start the service
+ $ systemctl start docker
+
+ $ # stop the service
+ $ systemctl stop docker
+
+ $ # restart the service
+ $ systemctl restart docker
+
+ $ # reload the service without interrupting normal functionality
+ $ systemctl reload docker
+
+ $ # enable a service and make it persistent to cross reboot
+ $ systemctl enable docker
+
+ $ # disable the service at boot
+ $ systemctl disable docker
+
+ $ # provides information about the state of the service
+ $ # if running properly, it should show a state of active running
+ $ systemctl status docker
+ 
+ $ Active active (running) since Sat 2020-03-21 00:45:22 EDT; 43s ago
+ $ # there are few other states 
+
+ $ active : service running
+ $ inactive : service stop
+ $ # there are transient states called activating and deactivating , which are in between two states
+
+ $ failed : crashed/error/timeout etc
+ ```
+ ```console
+ $ # running this command after making changes to a service unit file
+ $ # reload the system manager configuration
+ $ # and make systemd aware of the changes
+ $ systemctl daemon-reload
+ ```
+ A running service whose unit file has been updates on disk can only be restarted after running the systemctl deemon-reload command
+ ```console
+ $ # make changes to unit file
+ $ systemctl edit <unit_name>
+ 
+ $ # open the service configuration file with a text editor
+ $ # units edited this way apply the changes immediately
+ $ # without having to run the daemon reload
+ $ systemctl edit project-mercury.service --full
+ ```
+<h4>Systemctl to manage state</h4>
+ ```console
+ $ # see the current runlevel or the target
+ $ systemctl get-default
+
+ $ # change to a different target
+ $ systemctl set-default multi-user.target
+
+ $ # list all the unit systemd has loaded or attempted to load
+ $ # prints all units that are active, inactive, failed, or in  other transient states
+ $ systemctl list-units --all
+ 
+ $ # see only information about the active units 
+ $ systemctl list-units
+ ```
+<h4>Journalctl  </h4>
+ ```console
+ Query the contents of the systemd loggging system called journal
+ Troubleshooting tool for issues like service failures
+ ```
+ ```console
+ $ # prints all the log entries from the oldest entry to the newest
+ $ journalctl
+
+ $ # see the logs from the current boot
+ $ journalctl -b
+
+ $ # see the log entries for a specific unit
+ $ journalctl -u <unit_name>
+ $ journalctl -u docker.service
+ ```
+ The data provided by the log enrires for a service file, gernerally provides the r eason why a service unit is in a inactive or failed state. 
+ Great for debugging issues with the config files, or issues with the service dependencies, etc. 
