@@ -8,7 +8,7 @@
    * [C++ Programming Course](c++/c++_index.md)
 
 ## C#
-   * [C# Programming Course](C#/C#_index.md)
+   * [C# Programming Course](c_#/c_#_index.md)
 
 ## LLMs
    * [Large Language Model Basic](LLM/LLM_index.md)
