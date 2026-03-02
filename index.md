@@ -7,7 +7,7 @@
 ## C++
    * [C++ Programming Course](c++/c++_index.md)
 
-## C#
+## CSharp
    * [C# Programming Course](csharp/csharp_index.md)
 
 ## LLMs
