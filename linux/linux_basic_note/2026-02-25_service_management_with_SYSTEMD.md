@@ -38,7 +38,17 @@ We must use sudo command, as the service is set to run as the root user.
  ```console
  $ systemctl stop project-mercury.service
  ```
+<h4>Update Sections </h4>
+ ```console
+ $ sudo systemctl edit /etc/systemd/system/name_of_service
+ $ sudo systemctl edit <name_of_service>
 
+ $ sudo vi /etc/systemd/system/sample.service
+ $ # add /bin/bash /rott/sample_script.sh to ExecStart
+
+ ```
+
+https://loldle.net
 <h4> Allow the Service to start during boot </h4>
 We need to add another service called install/ 
  ```console
