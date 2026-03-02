@@ -23,3 +23,9 @@ Using sudo apt update alone does not update your system, just your datebase. Usi
  $ # exit to return to normal user
  $ # type EXIT or press Ctrl+D 
  ```
+
+<h3>Commands</h3>
+ ```console
+ $ # displays the amount of available and used disk space on mounted file systems
+ $ df
+ ```
