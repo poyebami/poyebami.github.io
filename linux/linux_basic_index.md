@@ -10,7 +10,7 @@
    * [2026-02-16 IPTABLES](linux_basic_note/2026-02-16_IPTABLES.md)
    * [2026-02-23 Cron Jobs](linux_basic_note/2026-02-23_cronjobs.md)
    * [2026-02-25 Service Management with SYSTEMD](linux_basic_note/2026-02-25_service_management_with_SYSTEMD.md)
-   * [2026-03-02 Storage in Linux](linux_basic_note/2026-03-02_storage_in_linux.md)
+   * [2026-03-02 Disk Partitions](linux_basic_note/2026-03-02_disk_partitions.md)
 
 - ## Text Editor
    * [2026-01-01 VI Editor](text_editor_note/2026-01-01_vi_text_editor.md)
