@@ -47,8 +47,6 @@ We must use sudo command, as the service is set to run as the root user.
  $ # add /bin/bash /rott/sample_script.sh to ExecStart
 
  ```
-
-https://loldle.net
 <h4> Allow the Service to start during boot </h4>
 We need to add another service called install/ 
  ```console
