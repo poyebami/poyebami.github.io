@@ -12,6 +12,7 @@
    * [2026-02-25 Service Management with SYSTEMD](linux_basic_note/2026-02-25_service_management_with_SYSTEMD.md)
    * [2026-03-02 Disk Partitions](linux_basic_note/2026-03-02_disk_partitions.md)
    * [2026-03-09 File Systems in Linux](linux_basic_note/2026-03-09_file_systems_in_linux.md)
+   * [2026-03-10 DAS NAS and SAN](linux_basic_note/2026-03-10_DAS_NAS_and_SAN.md)
 
 - ## Text Editor
    * [2026-01-01 VI Editor](text_editor_note/2026-01-01_vi_text_editor.md)
