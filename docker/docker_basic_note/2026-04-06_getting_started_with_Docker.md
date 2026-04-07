@@ -7,6 +7,7 @@ like image management, image security, universal control plane for managing and 
 Visit docs.docker.com and select "get docker". From the left-hand menu, select your system type and follow the instructions. After installing docker, we will run a simple container to ensure everything is work.
 Visit hub.docker.com. There is a list of the most populr Docker images likes Nginx, MongoDB, Alpine, Node.js, Redits, and more. For our case, we will be using a whalesay. Which is a simple application that trains a whale saying something. 
 Run the command 
+    
     ```console
-    $ sudo docker run docker/whalesay cowsay Hello-World!
+     sudo docker run docker/whalesay cowsay Hello-World!
     ```
