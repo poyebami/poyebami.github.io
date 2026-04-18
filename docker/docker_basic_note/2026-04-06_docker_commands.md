@@ -97,3 +97,25 @@ The Docker exec command to used to execute a command on the docker container.
  ff02::2 ip6-allrouters
  172.18.0.2     538d037f94a7
  ```
+ <h3>Run -attach and detach</h3>
+When you run a Docker run command like this, it runs in the foreground or in an 'attached mode', meaning you will be attached to the console or the standard out of the Docker container. And you will see the output of the web service on the screen.  You won't be able to do anything else on this console other than view the output until the Docker container stops. It won't respond to your input. 
+  ```console
+  $ docker run kodekloud/simple-webapp
+  This is a sample web application that displays a colored background.
+  * Serving Flask app "app" (lazy loading)
+  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+  ```
+Press CTRL+C combination to stop the container and the application hosted on the container exits and you get back to your prompt. 
+
+Another option is to run the Docker in the detached mode by providing the -d option. This will run the Docker container in the background mode and you will be back to your prompt immediately. The container will continue to run in the backend. 
+  ```console
+  $ docker run -d kodekloud/simple-webapp
+  a043d40f85fe414...
+  ```
+Run the Docker ps command to view the running container. 
+
+To attach back to the running container later, run the Docker attach command and specify the name or ID of the Docker container. Remember, if you're specifiying the ID of a container in any Docker command, you can simply provide the first few characters alone,
+just so it is different from the other container IDs on the host. In this case, I specify a 043d.
+  ```console
+  $ docker attach a043d
+  ```
