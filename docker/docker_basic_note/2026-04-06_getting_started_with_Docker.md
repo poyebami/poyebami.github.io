@@ -1,6 +1,6 @@
 <h1>Getting started with Docker</h1>
 
-There are two edition of Docker. The 'enterprise' and 'community' editions. The community edition is the set of free Docker products. The enterprise edition is the certifed and supported containers platform that co mes with enterprise add-ons 
+There are two edition of Docker. The 'enterprise' and 'community' editions. The community edition is the set of free Docker products. The enterprise edition is the certifed and supported containers platform that comes with enterprise add-ons 
 like image management, image security, universal control plane for managing and orchestrating containers runtimes. 
 
 <h1>Setup and Install Docker</h1>
