@@ -20,6 +20,11 @@ Use the exit command
  ```console
  [root@e0ae1ec7e1d3 /] # exit
  ```
+<h3>Run container in the background </h3>
+Use the run command with -d and you get back into the terminal
+ ```console
+ $ docker run -d ubuntu sleep 20
+ ``` 
 <h3>Docker ps command</h3>
 List all the running containers
  ```console
