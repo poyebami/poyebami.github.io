@@ -120,4 +120,54 @@ a directory inside the container.
  ```console
  $ docker run -v /opt/datadir:/var/lib/mysq1 mysq1
  ```
-In this case, we created a directory called /opt/datadir and map that to /var/lib/mysq1 inside the Docker container using the `-v` option and specifying the `directory on the Docker host` followed by a colon and the `directory inside the Docker container.` 
+In this case, we created a directory called /opt/datadir and map that to /var/lib/mysq1 inside the Docker container using the `-v` option and specifying the `directory on the Docker host` followed by a colon and the `directory inside the Docker container.`
+
+<h3>Inspect Coontainer</h3>
+Docker ps command is good enough to get basic details and containers like their names and IDs. But if you want to get additioanl details about a specific container, use the Docker inspect command and provide the containers name or ID.
+ ```console
+ $ docker inspect <containerName_ID>
+ $ docker inspect blissful_hopper
+ [
+    {
+        "Id": "35505f7810d17291261a43391d4b6c084..."
+        "Name": "/blissful_hooper",
+        "Path": "python",
+        "Args": [
+            "app.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+        },
+
+        "Mounts": [],
+        "Config": {
+            "Entrypoint": [
+                "python",
+                "app.py"
+            ],
+        },
+        "NetworkSetting": {..}
+    }
+ ]
+ ```
+It returns all the details of a container in a JSON format, such as the state, mounts, configuration data, network settings. It is important to use it when you're required to find details on a container. 
+
+JSON FORMAT: a lightweight, text-based, language-independent data-interchange format, commonly used for transmitting data between servers, and web applications.
+
+<h3>Container Logs</h3>
+For example, you run a simple web application using `-d` parameter and it ran the container in detached mode. How do you view the logs which happens to be the contents written to the standard out of that container? 
+Use the docker logs command and specify the container ID or name
+ ```console
+ $ docker logs blissful_hopper
+ This is a sample web application that displays a colored background.
+ A color can be specified in two ways.
+
+ 1. As a command line argment with --color as the argument. Aceepts one of red, green, blue, blue2, pink, darkblue
+ 2. As an Environment variable APP_COLOR. Accepts one of the red, gree, blue, blue2, pink, darkblue
+ 3. If none of the above then a random color is picked for the above list.
+ Note: Command line argument precedes over environment variable.
+ 
+ ...
+ ``` 
+ Docker logs command is used to retrieve and view logs from a specific Docker container. It captures any data the application writes to the standard output (STDOUT) and standard error (STDERR) streams. 
