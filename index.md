@@ -17,4 +17,4 @@
    * [Docker Course](docker/docker_index.md)
   
 ## Python
-   * [Python Cource](python/python_index.md)
+   * [Python Course](python/python_index.md)
