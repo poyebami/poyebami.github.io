@@ -20,16 +20,16 @@ I'm using visual studio code and to run my python program, I need to press the a
 <h3>Run with Debugger</h3>
 Running with debugger allow you to pause execution (breakpoint), step through code line by line, inspect variables and see how they change, catch errors exactly where they happeen.
  ```console
- mainly used to when something is broken
- you don't understand what your code is doing
- you want to trace logic step-by-step
+ Mainly used to when something is broken
+ You don't understand what your code is doing
+ You want to trace logic step-by-step
  ```
 <h3>Run with no Debugging</h3>
 Running without a debugger runs the program at full speed with no breakpoints, and no stepping though code.
  ```console
- you just want to see the output
- you're testing if everything works 
- you don't need to inspect anything
+ You just want to see the output
+ You're testing if everything works 
+ You don't need to inspect anything
  ```
 <h3>Comment</h3>
 Python interpretor doesn't output comments. To write a comment, use a pound sign. Commants are used for notes for yourself or for other people reading the code. 
