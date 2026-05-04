@@ -35,4 +35,18 @@ Now that you are running the container in detached mode, how do you want to atta
  ```console
  $ docker attach f13b85a3e0405
  ```
-This will bring you back into the container and its running in the foreground. 
+This will bring you back into the container and its running in the foreground.
+
+<h3>Internal IP in Docker Container</h3>
+ ```console
+ $ docker inspect <container_id>
+ $ docker inspect eb853f3ede72
+ ```
+The internal IP will be under Network sections.
+
+To enter in Jenkins, use the inspect command to get the internal IP. Also use the ps command to see the port number of Jenkins. After getting all that information, use the `internal IP` followed by the `port number`.
+ ```console
+ $ # example
+ 172.17.0.2:8080
+ ```
+ To save data from a container even after stopping it and without having to start all over. You will have to map it to a directory you want the data to save to.
