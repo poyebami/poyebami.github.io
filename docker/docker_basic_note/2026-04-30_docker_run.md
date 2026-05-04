@@ -107,7 +107,13 @@ You can run multiple instances of your application and map them to different por
  $ docker run -p 3306:3306 mysq1
  $ docker run -p 8306:2206 mysq1
  ```
-You can run as many application like thiat and map them to as many ports as you want. You cannot map to the same port on the Docker host more than once. 
+You can run as many application like thiat and map them to as many ports as you want. You cannot map to the same port on the Docker host more than once.
+
+<h3>PORT MAPPING EXAMPLE</h3>
+Run an instance of kodekloud/simple-webapp:blue and name the container blue-app, mapping port 8080 on the container to port 38282 on the host.
+ ```console
+ docker run -p 32828:8080 --name blue-app kodekloud/simple-webapp:blue
+ ```
 
 <h3>Run - Volume mapping </h3>
 Looking into how data is persisted in a Docker container. 
