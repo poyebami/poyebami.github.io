@@ -9,6 +9,16 @@ To print the message, I need to type `print` and add a set of parenthesis. Betwe
   $ print("hello world!")
   hello world
  ```
+ NOTE: When print in `""`, you are printing the word. 
+ ```console
+ first_name = "prosper"
+
+ $ # printing the character "prosper"
+ print("first_name")
+
+ $ # printing the variable
+ print(first_name)
+ ```
 <h3>Run our code</h3>
 I'm using visual studio code and to run my python program, I need to press the arrow at the top right-hand corner of the screen. 
  ```console
