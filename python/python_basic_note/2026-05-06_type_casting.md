@@ -74,3 +74,41 @@ When typecasting to a boolean, as long there is a string of characters, the inte
  False
  False
  ```
+<h3>Type Casting Practice </h3>
+What is your age?
+```console
+age = int(input("Enter your age: "))
+age = (age+1)
+age = str(age)
+
+print(f"Next year you will be {age}")
+```
+What is the price of these items?
+```console
+price = float(input("Enter the price of the item: "))
+quantity = int(input("How many are you buying: "))
+total = float(price*quantity)
+
+print(f"${total:.2f}")
+```
+Temperature Converter
+```console
+Celsius = float(input("Enter the Celsius: "))
+temp = float((Celsius * 9/5)+ 32)
+
+print(f"{temp:.2f}")
+```
+Damage and Mana
+```console
+name = input("What is your name Hero? : ")
+strength = int(input("What is your strength : "))
+bonus = int(input("What is your weapon's bonus damage : "))
+mana = float(input("How much mana do you have : "))
+fire_ball = int(input("How many fireball will you cast : "))
+fire_mana = (fire_ball*5)
+mana_left = round(mana-fire_mana)
+damage = (strength+bonus)
+
+print(f"You total mana left is {mana_left} ")
+print(f"{name} did {damage} damage!")
+```
