@@ -1,7 +1,7 @@
-</h1>Typecasting</h1>
+<h1>Typecasting</h1>
 Typecasting is the process of converting a variable from one data type to another. str(), int(), float(), bool().
 Typecasting is useful with handling user input.:
-</h3>How to get the data type of a variable</h3>
+<h3>How to get the data type of a variable</h3>
 Use the type() funcation to get the data type. 
  ```console
  name = "Prosper"
