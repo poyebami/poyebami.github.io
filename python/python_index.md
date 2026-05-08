@@ -5,4 +5,5 @@
     * [2026-05-04 Variable](python_basic_note/2026-05-04_variable.md)
     * [2026-05-06 Type Casting](python_basic_note/2026-05-06_type_casting.md)
     * [2026-05-06 User Input](python_basic_note/2026-05-06_user_input.md)
+    * [2026-05-8 Madlibs](python_basic_note/2026-05-08_madlibs.md)
  
