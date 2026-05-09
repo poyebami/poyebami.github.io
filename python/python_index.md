@@ -7,4 +7,6 @@
     * [2026-05-06 User Input](python_basic_note/2026-05-06_user_input.md)
     * [2026-05-08 Madlibs](python_basic_note/2026-05-08_madlibs.md)
     * [2026-05-08 Arithmetic and Math in Python](python_basic_note/2026-05-08_arithmetic_math.md)
+    * [2026-05-08 If Statement](python_basic_note/2026-05-08_if_statements.md)
+
  
