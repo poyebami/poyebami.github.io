@@ -63,4 +63,36 @@ elif name == "John":
 else:
     print(f"Welcome {name}")
  ```
-
+PICK A PATH RPG
+ ```console
+ # PICK A PATH
+path = input("Pick a path: left or right ")
+gold = 0
+if path == "right":
+    print("You found a room at the end of the hall")
+    door = input("Do you open the door? Y/N ")
+    if door == "Y":
+        print("You found a teasure room. +500 GOLD ")
+        gold += 500
+        print(f"Your total gold is {gold}. ")
+    elif door == "N":
+        print("You continue to explore the dungeon and got lost. GAME OVER" )
+elif path == "left":
+    print("You found a chest")
+    chest = input("Do you open the chest? Y/N ")
+    if chest == "Y":
+        print("The chest was a mimic. GAME OVER")
+    elif chest == "N":
+        print("You looked closely at the chest and noticted it was a mimic.")
+        action = input("Do you attack the mimic? Y/N ")
+        if action == "Y":
+            print("You killed the mimic +20 GOLD")
+            gold += 20
+            print(f"Your total gold is {gold}.")
+        elif action == "N":
+            print("You ran away and left the dungeon empty hand. -102 GOLD for not finishing the quest")
+            gold -= 102
+            print(f"Your total gold is {gold}. You owe the guild 250 gold. ")
+else:
+    print("You waited too long and a slime killed you. GAME OVER")
+ ```
