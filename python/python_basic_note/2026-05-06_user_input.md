@@ -52,4 +52,6 @@ elif path == "Left":
         print("You escaped")
     elif action == "Fight": 
         print("Dragon used fireball and burned you alive. Game Over")
+else:
+    print("Invaild path. While you were distracted a goblin stabbed you in the back. GAME OVER")
  ```
