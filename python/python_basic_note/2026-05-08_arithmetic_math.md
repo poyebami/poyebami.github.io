@@ -87,6 +87,16 @@ The `min`() function is used to find the minimum value of various values.
  result = min(x, y, and z)
  -4
  ```
+There is also `log` function that computes the natural logarithm (base e)
+ ```console
+ math.log(x)
+
+ $ # base 10 (log_10x)
+ math.log10(x)
+ 
+ $ # base 2 (10_2x)
+ math.log2(x)
+ ```
 <h3>Useful Constants and Functions</h3>
 To use mathematical functions beyond basic arithemtic (like addition or multiplication) in Python, you need to import the built-in `math module`.
 
