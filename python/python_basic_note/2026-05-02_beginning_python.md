@@ -43,5 +43,5 @@ Running without a debugger runs the program at full speed with no breakpoints, a
  ```
 <h3>Comment</h3>
 Python interpretor doesn't output comments. To write a comment, use a pound sign. Commants are used for notes for yourself or for other people reading the code. 
-
+To highlight multiple lines for comments, highlight the lines and use `CTRL+/`
 NOTE: if run the code with a comment, the comment will not display to the output. 
