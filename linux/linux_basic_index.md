@@ -29,6 +29,7 @@
 
 - ## Bash
    * [2026-01-14 Generating and Using SSH Keys in Bash](bash_note/2026-01-14_generating_and_using_ssh_key_in_bash.md)
+   * [2026-05-12 SSH keys](bash_note/2026-05-12_ssh_keys.md)
 
 - ## Commands
    * [2026-02-23 Useful Commands](linux_basic_note/2026-02-23_useful_commands.md)
