@@ -46,3 +46,12 @@ After swap the user, you need to add a .ssh directory for them. When someone tri
  $ # add the user public key in the authorized_keys folder
  ```
 After adding the public key into the folder, the user should finally be able to enter the server.
+
+<h3> Change the default shell of a User </h3>
+To change the default shell of a user, use the command chsh with sudo command.
+ ```console
+ $ # -s stands for shell
+ $ # -chsh stands for change shell
+ sudo chsh -s /bin/bash username
+ sudo chsh -s /bln/bash guest
+ ```
