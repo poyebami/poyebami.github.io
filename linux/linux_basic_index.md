@@ -32,6 +32,7 @@
    * [2026-05-12 SSH Keys](bash_note/2026-05-12_ssh_keys.md)
    * [2026-05-12 SSH Flags](bash_note/2026-05-12_ssh_flags.md)
    * [2026-05-13 Giving a user access to a server using ssh](bash_note/2026-05-13_giving_a_user_access_ssh.md)
-
+   * [2026-05-15 Configuring an SSH Config File](bash_note/2026-05-15_ssh_config_file.md)
+ 
 - ## Commands
    * [2026-02-23 Useful Commands](linux_basic_note/2026-02-23_useful_commands.md)
