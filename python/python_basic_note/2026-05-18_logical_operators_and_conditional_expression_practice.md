@@ -43,7 +43,7 @@ dnd_level = int(input("What is your level: "))
 rank = "Master" if dnd_level >= 50 else "Novice"
 print(f"Your rank is {rank}")
 ```
-<h3>BIGGER CHALLENGER </h3>
+<h3>BIGGER CHALLENGE </h3>
 ```console
 name = input("What is your name? :")
 dnd_level = int(input("What is your level? :"))
