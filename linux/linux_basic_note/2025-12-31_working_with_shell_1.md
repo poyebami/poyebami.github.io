@@ -118,8 +118,18 @@
   $ # copy multiple files to a directory
   $ cp file1.txt file2.txt /path/to/destination_directory/
 
-  $ # copy an entire direcotry, incluidng its contents and subdirectories
+  $ # copy an entire directory, including its contents and subdirectories
   $ cp -r source_directory/ /path/to/destination_directory/
+
+  $ # creates all the nested directories in one go (parent and child)
+  $ mkdir -p animals/birds
+
+  $ # && runs the second command only if the first one succeeds
+  $ # create a directories and a txt file 
+  $ mkdir animals && touch birds.txt
+
+  $ # does back into a whichever directory you were in before
+  $ cd -
   ```
   
 <h3> Absolute and Relative Path </h3>
