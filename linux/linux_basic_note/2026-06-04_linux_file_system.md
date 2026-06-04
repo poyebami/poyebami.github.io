@@ -1,0 +1,35 @@
+<h1>Linux File System</h1>
+
+<h3>/bin</h3>
+Bin is short for binaries which is another word for programs or applications. It contains most of the programs of the system. The `/bin`  directory has the essential programs that the system requires to operate. This likes `ls` `cat` and other basic functions are store in /bin. 
+
+`SBin` are system binaries that a system administrator would use and that a standard user wouldn't have access to without permission. Both of these folders contain the files that need to be accessible when running in single user mode as opposed to the usual multi-user mode. `Single User Mode` is a special mode that boots you in as a `root user` to allow you do a system repairs and upgrades or testing. 
+
+<h3>/boot</h3>
+This is where the Linux kernal and boot loader files are kept. It contains everything the OS needs to boot.
+
+<h3>/dev</h3>
+The /dev directory is a special directory, since it does not really contain files in the usual sense. Rather, it contains devices that are available to the system. /dev is where your devices live. In Linux, devices are treated like files. For example /dev/fd0 is the first floppy disk drive, /dev/sda is the first hard drive. The partition on that disk `/dev/sda` would be `sda1`, `sda2`, `sda3` and so on. Everything from the webcam, keyboard, mouse, and etc will be in /dev. This is typically an area that applications and drives will access and is rarely something a user should be using. 
+
+<h3>/etc</h3>
+/etc is where all the configurations are stored. Configuration that are system-wide such as apt. All of the files in /etc should be text files. Some points of interest are:
+ 
+ /etc/passwd
+ The passwd file contains the essential information for each user. This is where user account are defined
+
+ /etc/fstab
+ The fstab file contains a table of devices that get mounted when the system boots. This file defines the system's disk drives
+
+ /etc/hosts
+ This file lists the netwrok host names and IP addresses that are intrinsically known to the system. 
+
+ /etc/init.d
+ This directory contains the scripts that stare varius system services at boot time.
+
+<h3>/lib</h3>
+/lib, /lib32, /lib64 are where the libraries are stored. Libraries are files that applications can use to perform varius functions. They are required by the binaries in /bin and /sbin. 
+
+<h3>/media or mnt</h3>
+/media or /mnt `mount` are directories where you would find your other mounted drives. It can be a floppy disk, USB stick, external hard drive, network drive or a second hard drive. The /mnt directory is used if you are mounting things manually and to leave the /media directory for the OS to manage. 
+
+<h3>/opt</h3>
