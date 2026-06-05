@@ -64,8 +64,10 @@
   $ cd .. # takes you to one directory lower
   $ cd . # keep you in current directory
   $ cd - # takes you to previous directory 
+  $ cd ../.. # go up two levels
+  $ cd ../other_folder # go up then into a sibling folder
   $ # If I'm in ~/repos/Asia and i moved to ~/Downloads, cd - will take me back to ~/repos/Asia
-
+  
   $ pushd # change current working directory to directory specified in argument
   $ pushd ~/repos # change working directory to repos
 
@@ -75,6 +77,12 @@
   $ mv ~/Asia/Japans ~/Asia/Japan # rename file
   $ mv ~/Asia/UK ~/Europe/ # move file UK to Europe directory
   $ mv ~/Asia ~/Continents # move Asia directory to Continents directory
+  
+  $ # move files to a previous directory
+  $ mv eng_football.txt ..
+
+  $ # move files to the next directory
+  $ mv eng_football.txt ./premier_league/
 
   $ cp # copy file
   $ cp -r # copy directories
@@ -93,8 +101,8 @@
   $ touch <file_name> # can create multiple like mkdir
 
   $ more <file_name> # view text files in a scrollable manner
-  $ less <file_name> # view the content of a file and navigate through the file
-  
+  $ less <file_name> # view the content of a file and navigate through the file and press q to exit
+
   $ whatis <command> # displays a one-line decription of what a command does
   
   $ man <command> # displays even more detail about command, often with examples and use cases
@@ -130,6 +138,7 @@
 
   $ # does back into a whichever directory you were in before
   $ cd -
+
   ```
   
 <h3> Absolute and Relative Path </h3>
