@@ -7,7 +7,7 @@ Bin is short for binaries which is another word for programs or applications. It
 
 /bin is used by the system and the system admin to perform maintenance. 
 <h3>/boot</h3>
-This is where the Linux kernal and boot loader files are kept. It contains everything the OS needs to boot.
+This is where the Linux kernel and boot loader files are kept. It contains everything the OS needs to boot.
 
 <h3>/dev</h3>
 The /dev directory is a special directory, since it does not really contain files in the usual sense. Rather, it contains devices that are available to the system. /dev is where your devices live. In Linux, devices are treated like files. For example /dev/fd0 is the first floppy disk drive, /dev/sda is the first hard drive. The partition on that disk `/dev/sda` would be `sda1`, `sda2`, `sda3` and so on. Everything from the webcam, keyboard, mouse, and etc will be in /dev. This is typically an area that applications and drives will access and is rarely something a user should be using. 
@@ -16,7 +16,10 @@ The /dev directory is a special directory, since it does not really contain file
 /etc is where all the configurations are stored. Configuration that are system-wide such as apt. All of the files in /etc should be text files. Some points of interest are:
  
  /etc/passwd
- The passwd file contains the essential information for each user. This is where user account are defined
+ The passwd file contains the essential information for each user. This is where user account are defined. DevOps proccesses use these to audit users, manage SSH keys, or configure system-level services accounts. 
+
+ /etc/hostname
+ defines the unique names of the server.
 
  /etc/fstab
  The fstab file contains a table of devices that get mounted when the system boots. This file defines the system's disk drives
@@ -27,16 +30,18 @@ The /dev directory is a special directory, since it does not really contain file
  /etc/init.d
  This directory contains the scripts that stare varius system services at boot time.
 
+ /etc is the core directory for system-wide configuration files and is often referred to as the "brain" or the control center of the operating system. 
+
 <h3>/lib</h3>
-/lib, /lib32, /lib64 are where the libraries are stored. Libraries are files that applications can use to perform varius functions. They are required by the binaries in /bin and /sbin. 
+/lib, /lib32, /lib64 are where the libraries are stored. Libraries are files that applications can use to perform varius functions. They are required by the binaries in /bin and /sbin. /lib is critical for system troubleshooting, containerization, and security patching. 
 
 <h3>/media or mnt</h3>
 /media or /mnt `mount` are directories where you would find your other mounted drives. It can be a floppy disk, USB stick, external hard drive, network drive or a second hard drive. The /mnt directory is used if you are mounting things manually and to leave the /media directory for the OS to manage. 
 
 <h3>/opt</h3>
-/opt is the optional folder which is where manually installed software from venders are located. Some software packages found in repos can also be found in /opt. This is wheere software you've created yourself will be located. 
+/opt is the optional folder which is where manually installed software from venders are located. Some software packages found in repos can also be found in /opt. This is wheere software you've created yourself will be located. Think of it as program files folder in Windows, it keepss software separate from the core operating system. 
 
-<h3>/pro</h3>
+<h3>/proc</h3>
 It is where pseudo files that contain information about system processes and resources. It does not contain files. There are group of numbered entries in this directory that correspond to all the processes running on the system. There are number of named entries that permit access to the current configuration of the system. Many of these entries can be viewed.
  
 /proc/cpuinfo  This entry will tell you what the kernel thinks of the system's CPU.
