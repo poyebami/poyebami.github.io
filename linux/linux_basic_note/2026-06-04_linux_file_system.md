@@ -33,3 +33,12 @@ The /dev directory is a special directory, since it does not really contain file
 /media or /mnt `mount` are directories where you would find your other mounted drives. It can be a floppy disk, USB stick, external hard drive, network drive or a second hard drive. The /mnt directory is used if you are mounting things manually and to leave the /media directory for the OS to manage. 
 
 <h3>/opt</h3>
+/opt is the optional folder which is where manually installed software from venders are located. Some software packages found in repos can also be found in /opt. This is wheere software you've created yourself will be located. 
+
+<h3>/pro</h3>
+It is where pseudo files that contain information about system processes and resources. It does not contain files. There are group of numbered entries in this directory that correspond to all the processes running on the system. There are number of named entries that permit access to the current configuration of the system. Many of these entries can be viewed.
+ 
+/proc/cpuinfo  This entry will tell you what the kernel thinks of the system's CPU.
+
+<h3>/root</h3>
+/root is the superuser's home directory. Unlike the other user home folder, it does not contain the typical directories inside and it does not reside in the home directory. You can store files in /root. However, you will need root permission to access it. The location of the root directory ensure that root always has access to its home folder. The root directory is the first or top-most directory in a hierarchy. It can be likened to the trunk of a tree, as the starting point where all the branches originiate from. 
