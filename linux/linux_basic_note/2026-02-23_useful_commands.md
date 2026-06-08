@@ -24,8 +24,37 @@ Using sudo apt update alone does not update your system, just your datebase. Usi
  $ # type EXIT or press Ctrl+D 
  ```
 
-<h3>Commands</h3>
+<h3>df command </h3>
  ```console
  $ # displays the amount of available and used disk space on mounted file systems
  $ df
+ ```
+
+<h3>Find Command </h3>
+ ```console 
+ $ # find and list the absolute path of file
+ $ find . -name basketball.txt
+
+ $ # find and list all .txt files 
+ $ find . -name "*.txt"
+
+ $ # find and list all that starts with prosper*
+ $ find ~ -name "prosper*"
+ /home/vagrant/prosper_v2
+ /home/vagrant/prosper
+ /home/vagrant/prosper_1
+
+ $ # find and list all txt files in a directory
+ $ find animals/ -name "*txt" 
+ animals/mammals/birds/parrot.txt
+ animals/mammals/birds/penguins.txt
+ animals/aquatic/fish/shark.txt
+
+ $ # find and list files only
+ $ find . -type f
+ $ # find and list files only in home directory
+ $ find ~ -type f
+
+ $ # find and list all directory
+ $ find . -type d 
  ```
