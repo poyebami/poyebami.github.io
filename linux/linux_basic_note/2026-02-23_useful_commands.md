@@ -58,3 +58,57 @@ Using sudo apt update alone does not update your system, just your datebase. Usi
  $ # find and list all directory
  $ find . -type d 
  ```
+<h3>Reading Files Without Opening Them</h3>
+ ```console
+ $ # print entire files
+ $ cat /etc/hosts
+
+ $ # scroll throufh large files 
+ $ less /var/log/syslog
+
+ $ # first N lines of a file
+ $ head -20 server.log
+
+ $ # last N lines of a file
+ $ tail -f /var/log/nginx/access.log
+ ``` 
+<h3>grep</h3>
+The `grep` command search for text inside files.
+ ```console
+ $ # find a word in one file
+ $ grep "prosper" soccer.txt
+ 
+ $ # search in all .txt files
+ $ grep "prosper" *.txt
+ ```
+ ```console
+ $ # case-insensitive
+ $ grep -i "goal" soccer.txt
+ 
+ $ # show line number
+ $ grep -n "prosper" readme.txt
+ 1: hi this is prosper
+ 4: hi prosper. this is the readme.txt file
+
+ $ # count matching lines
+ $ grep -c "prosper" readme.txt
+
+ $ # show line that Don't match
+ $ grep -v "prosper" readme.txt
+
+ $ # search recursively in directories
+ $ grep -r "prosper" ./
+ ./readme.txt: hi this is prosper
+ ./readme.txt: hi prosper. this is the readme.txt file
+ ```
+Combining Flags
+ ```console
+ $ # case-insensitive + line numbers
+ $ grep -in "goal" soccer.txt
+
+ $ # recursive + line numbers
+ $ grep -rn "goal" ../premier_league/
+
+ $ # case-insensitive + filename only
+ $ grep -il "goal" *.txt
+ ```
