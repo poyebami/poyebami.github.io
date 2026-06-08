@@ -2,7 +2,7 @@
 A string is a series of characters. 
 
 <h3>Len()</h3>
-The len() length function will give usthe length of a string. How many characters is it? 
+The len() length function will give us the length of a string. How many characters is it? 
  ```console
  name = input("Enter your full name: ")
 
