@@ -112,3 +112,15 @@ Print a comprehensive list of all of the string method.
  ```console
  print(help(str))
  ```
+<h3>String Method Practice</h3>
+ ```console
+ username = input("Enter your username: ")
+
+char_username = len(username)
+spa_dig_username = username.isalpha()
+# print(char_username)
+if char_username > 12 or spa_dig_username == False:
+    print("Your username must not contain space, numbers and no more than 12 character")
+else:
+    print("Username accepted")
+ ``` 
