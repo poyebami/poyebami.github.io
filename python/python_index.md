@@ -12,4 +12,4 @@
     * [2026-05-16 Conditional Expression](python_basic_note/2026-05-16_conditional_expression.md)
     * [2026-05-18 Logical Operators & Conditional Expression Practice](python_basic_note/2026-05-18_logical_operators_and_conditional_expression_practice.md)
     * [2026-05-18 String Methods](python_basic_note/2026-05-18_string_methods.md)
- 
+    * [2026-06-12 String Indexing](pyth_basic_note/2026-06-12_string_indexing.md)
