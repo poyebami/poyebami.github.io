@@ -123,6 +123,22 @@ The split() method splits a string into a list. The data type will print out as 
  print(result[0])
  $ # output: the
  ```
+<h3>title</h3>
+str.title() method in python converts a strign to title case, meaning the first letter of every wood is capitalized while all other letters are changed to lowercase. 
+
+It does not modify the original text; instead, it returns a brand-new formatted string. 
+ ```console
+text = "welcome to python programming"
+print(text.title())  
+# Output: Welcome To Python Programming
+ ```
+<h3>strip</h3>
+strip() method removes leading and trailing whitespace (spaces, tabs, and newlines) from a string by default. If you pass no arguments, it trims all blank spaces from both the beginning and the end.
+ ```console
+text = "   Hello World!   \n"
+cleaned = text.strip()
+print(repr(cleaned))  # Output: 'Hello World!'
+ ```
 <h3>Help</h3>
 Print a comprehensive list of all of the string method.
  ```console
