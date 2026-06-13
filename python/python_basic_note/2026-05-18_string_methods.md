@@ -107,6 +107,22 @@ We can remove the characters completely by replacing them with an empty string
  print(result)
  $ # output: input is 123-456-7890 and result is 1234567890
  ```
+<h3>split</h3>
+Calling spilt() without any arguments automatically splits a sentence by any consecutive whitespace.
+The split() method splits a string into a list. The data type will print out as a list.
+ ```console
+ type = "python is fun \n to learn"
+ print(type.split())
+ $ # output: ['python', 'is', 'fun', 'to', 'learn']
+ ```
+ ```console
+ $ # split a sentence into a list and print out the first word
+ $ # we added an argument in result to print only the first word. in this case 0
+ sentence = "the quick brown fox"
+ result = sentence.split()
+ print(result[0])
+ $ # output: the
+ ```
 <h3>Help</h3>
 Print a comprehensive list of all of the string method.
  ```console
@@ -124,3 +140,4 @@ if char_username > 12 or spa_dig_username == False:
 else:
     print("Username accepted")
  ``` 
+
