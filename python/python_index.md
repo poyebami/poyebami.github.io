@@ -9,7 +9,7 @@
     * [2026-05-08 Arithmetic and Math in Python](python_basic_note/2026-05-08_arithmetic_math.md)
     * [2026-05-08 If Statement](python_basic_note/2026-05-08_if_statements.md)
     * [2026-05-16 Logical Operators](python_basic_note/2026-05-16_logical_operators.md)
-    * [2026-05-16 Conditional Expresssion](python_basic_note/2026-05-16_conditional_expression.md)
-    * [2026-05-18 Logical Operators & Conditioanl Expression Practice](python_basic_note/2026-05-18_logical_operators_and_conditional_expression_practice.md)
+    * [2026-05-16 Conditional Expression](python_basic_note/2026-05-16_conditional_expression.md)
+    * [2026-05-18 Logical Operators & Conditional Expression Practice](python_basic_note/2026-05-18_logical_operators_and_conditional_expression_practice.md)
     * [2026-05-18 String Methods](python_basic_note/2026-05-18_string_methods.md)
  
