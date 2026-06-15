@@ -13,4 +13,6 @@
     * [2026-05-18 Logical Operators & Conditional Expression Practice](python_basic_note/2026-05-18_logical_operators_and_conditional_expression_practice.md)
     * [2026-05-18 String Methods](python_basic_note/2026-05-18_string_methods.md)
     * [2026-06-12 String Indexing](python_basic_note/2026-06-12_string_indexing.md)
+    * [2026-06-15 Format Specifiers](python_basic_note/2026-06-15_format_specifiers.md)
+
 
