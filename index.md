@@ -4,8 +4,8 @@
 ## Linux
    * [Linux Basic](linux/linux_basic_index.md)
   
-## C++
-   * [C++ Programming Course](c++/c++_index.md)
+--  ## C++
+  // * [C++ Programming Course](c++/c++_index.md)
 
 ## CSharp
    * [C# Programming Course](csharp/csharp_index.md)
