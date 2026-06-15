@@ -14,6 +14,7 @@
    * [2026-03-09 File Systems in Linux](linux_basic_note/2026-03-09_file_systems_in_linux.md)
    * [2026-03-10 DAS NAS and SAN](linux_basic_note/2026-03-10_DAS_NAS_and_SAN.md)
    * [2026-06-04 Linux File System](linux_basic_note/2026-06-04_linux_file_system.md)
+   * [2026-06-15 Users in Linux](linux_basic_note/2026-06-15_users_in_linux.md)
 
 - ## Text Editor
    * [2026-01-01 VI Editor](text_editor_note/2026-01-01_vi_text_editor.md)
