@@ -40,7 +40,7 @@ YOU CAN ALSO MIX FLAGS
  $ # :, = uses to add comma on each thousand's place
  price = 17000
  print(f"the car cost ${price:,}")
- the car cost $17,000
+ $ # output: the car cost $17,000
 
  $ # mixing flags
  price = 17000.24234
