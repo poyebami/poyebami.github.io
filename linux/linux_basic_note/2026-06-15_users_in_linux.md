@@ -44,4 +44,34 @@ Commands for creating, modifying, and user's information.
  $ # output: vagrant
 
  $ # shows UID, GID, and all groups for current user
+ $ id
+ $ # output: uid=1000(vagrant) gid=1000(vagrant) groups=1000(vagrant)
+ ```
+<h3>Adding Users</h3>
+ ```console
+ $ # create a new users account
+ $ sudo adduser <username>
+ $ sudo adduser prosper
+
+ When you run this command, the system guides you through an interactive prompt:
+ 1. assign a unique UID
+ 2. created a dedicated home directory at /home/<username>
+ 3. prompt you to set and confirm a password
+ 4. ask for full names, room numbers, and contact details (optional)
+ ```
+ ```console
+ $ # add an existing user to a group
+ $ sudo adduser <username> <groupname>
+
+ $ # set a specific login
+ $ sudo adduser <username> --shell /bin/sh
+
+ $ # define a custom home directory path
+ $ sudo adduser <username> --home /custom/path/
+
+ $ # create a system user (no login permission, no home directory)
+ $ sudo adduser --system <username>
+
+ $ # create a account without password constraints (e.g., for SSH keys):
+ $ sudo adduser --disabled-password <username>
  ```
