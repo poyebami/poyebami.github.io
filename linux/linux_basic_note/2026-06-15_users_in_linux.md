@@ -15,6 +15,8 @@ $ /etc/passwd - basic user info (readable by everyone)
 $ cat /etc/passwd | grep ubuntu
 ubuntu:x:1000:1000:Ubuntu:/home/unbuntu:/bin/bash
 nolan:x:1002:1002::/home/nolan:/bin/sh
+nolan:  x:  1002: 1002:          : /home/nolan  :/bin/sh
+[user]:[pw]:[UID]:[GID]:[comment]:[home]:[shell]
  ```
 Username: the login name used to access the system (between 1 and 32 characters)
 
@@ -29,3 +31,17 @@ User Info (GECOS): optional comment field, often used to store that user's full 
 Home Directory: The absolute path to the user's personal directory (e.g., /home/username)
 
 Login Shell: the absolute path to the program that starts automatically when the user logs in (e.g., /bin/bash or /bin/sh)
+
+ ```console
+ $ sudo cat /etc/shadow | grep ubuntu
+ ubuntu:$6$xyz...:19000:0:99999:7:::
+ ```
+<h3>Managing User</h3>
+Commands for creating, modifying, and user's information.
+ ```console
+ $ # prints the exact username of the current effective user session.
+ $ whoami
+ $ # output: vagrant
+
+ $ # shows UID, GID, and all groups for current user
+ ```
