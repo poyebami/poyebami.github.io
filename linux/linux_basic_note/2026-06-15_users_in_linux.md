@@ -75,3 +75,26 @@ Commands for creating, modifying, and user's information.
  $ # create a account without password constraints (e.g., for SSH keys):
  $ sudo adduser --disabled-password <username>
  ```
+<h3>Switching to another user</h3>
+ ```console
+ $ # switch to a user with their environment
+ $ sudo -iu <username>
+
+ $ # switch to a user preserving your current environment
+ $ sudo -su <username>
+
+ $ # run a single command as another user
+ $ sudo -u <username> <command_to_run>
+ ```
+<h3>Deleting User</h3>
+ ```console
+ $ # delete the user and their home directory
+ $ sudo userdel -r <username>
+
+ $ # force the deletion (if they are logged in):
+ $ sudo userdel -f <username>
+
+ $ # delete only the account
+ $ sudo userdel <username>
+ ```
+
