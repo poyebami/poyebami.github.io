@@ -30,3 +30,38 @@ while number < 1 or number > 10:
 print(f"The number you picked is {number}")
 ```
 While loops is useful for verifying user input. If a user types in some input that is not vaild, you reprompt them. 
+
+<h3>Countdown</h3>
+```console
+$ # initialize the starting number 
+count = 1 
+
+$ # loop as long as count is less than or equal to 5
+while count <= 5:
+    print(count)
+$ # increment the number so the loop eventually stops
+    count += 1
+```
+```console
+$ # Count down from 10 to 1 then print "Blast off!"
+count = 10
+
+while count <= 10 and count >= 1:
+    print(count)
+    count -= 1
+    
+print("Blast Off")
+```
+<h3>While Loop Practice </h3>
+```console
+$ # starting total number is 0
+total =0
+user_input = input("Enter a number: type done to stop ")
+$ # checks to see if user_input is not 'done'
+while not user_input == "done":
+    $ # turns user input into int datatype and also add the total to new total
+    total = total + int(user_input)
+    user_input = input("Enter a number: type done to stop ")
+
+print(total)
+```
