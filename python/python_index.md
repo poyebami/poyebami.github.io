@@ -15,5 +15,5 @@
     * [2026-06-12 String Indexing](python_basic_note/2026-06-12_string_indexing.md)
     * [2026-06-15 Format Specifiers](python_basic_note/2026-06-15_format_specifiers.md)
     * [2026-06-15 While Loops](python_basic_note/2026-06-15_while_loops.md)
-
+    * [2026-06-22 For Loops](python_basic_note/2026-06-22_for_loops.md)
 
