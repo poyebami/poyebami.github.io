@@ -87,3 +87,12 @@ elif 28 > temp > 0 and not is_sunny:
    print("It is CLOUDY")
 $ # output: It is WARM outside. It is CLOUDY
  ```
+<h3>NOT IN </h3>
+The `Not In` operator evaluates whether an element does not exist inside a given collection (like a list, tuple, or string).
+ ```console
+banned_user = ["admin", "root", "superuser"]
+current_user = "guest"
+
+if current_user not in banned_user:
+    print("Access granted.")
+ ```
