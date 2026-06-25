@@ -77,3 +77,18 @@ $ chmod 600 id_rsa
 $ # COMMON USED PERMISSION
 $ # 755= scripts, 644 = files 600 = SSH keys 777 = NEVER NEVER USED THIS 
 ```
+<h3>CHOWN - Changing Ownership</h3>
+Permission means nothing if the wrong user owns the file
+```console
+$ # change owner only
+$ sudo chown john file.txt
+
+$ # change owner AND group
+$ sudo chown john:developers file.txt
+
+$ # change group only (note the colo prefix)
+$ sudo chown :www-data /var/www/html/
+
+$ # recursive - change everything in a directory
+$ sudo chown -R ubuntu:ubuntu /home/ubuntu/app
+```
