@@ -1,5 +1,12 @@
 <h1>File Permissions </h1>
+To check for users in a account use this command
+ ```console
+ $ # check for users
+ $ cat /etc/passwd
 
+ $ # check for groups
+ $ cat /etc/group
+ ```
 <h3>Cracking the Permission Code</h3>
 What does -rwxr-xr-- mean?
 
