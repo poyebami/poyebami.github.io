@@ -86,7 +86,7 @@ $ sudo chown john file.txt
 $ # change owner AND group
 $ sudo chown john:developers file.txt
 
-$ # change group only (note the colo prefix)
+$ # change group only (note the colon prefix)
 $ sudo chown :www-data /var/www/html/
 
 $ # recursive - change everything in a directory
