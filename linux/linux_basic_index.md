@@ -37,9 +37,9 @@
    * [2026-05-13 Giving a user access to a server using ssh](bash_note/2026-05-13_giving_a_user_access_ssh.md)
    * [2026-05-15 Configuring an SSH Config File](bash_note/2026-05-15_ssh_config_file.md)
  
-    <h3> Script in Bash</h3>
-   * [2026-07-14 First Bash Script](bash_note/2026-07-14_first_bash_script.md)  
-   * [2026-07-14 Variables](bash_note/2026-07-14_variables.md)
+    - <h3> Script in Bash</h3>
+    * [2026-07-14 First Bash Script](bash_note/2026-07-14_first_bash_script.md)  
+    * [2026-07-14 Variables](bash_note/2026-07-14_variables.md)
 
 - ## Commands
    * [2026-02-23 Useful Commands](linux_basic_note/2026-02-23_useful_commands.md)
