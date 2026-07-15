@@ -61,3 +61,18 @@ There are lot of different flags you can use to modify the behavior of the read 
  $ # limit to 1 character
  read -n 1 -p "Press Y or N to continue: " confirmation
  ```
+<h3>Positional Argument</h3>
+Commands can take in arguments at a specific postion, counting from one (0 reseved for the shell).
+ ```console
+ $ echo Hello There!
+ $ # echo = 0 , Hello = 1, There = 2
+ ```
+ If you are using positional argument, make sure to put the input before you run the command.
+ ```console
+ #!/bin/bash
+ echo Hello $1 $2
+
+ $ # putting the input before running the command
+ $ ./posiargument John Smith
+ $ # output: Hello John Smith
+ ```
