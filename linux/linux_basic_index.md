@@ -40,6 +40,7 @@
     - <h3> Script in Bash</h3>
     * [2026-07-14 First Bash Script](bash_note/2026-07-14_first_bash_script.md)  
     * [2026-07-14 Variables](bash_note/2026-07-14_variables.md)
+    * [2026-07-16 Output/Input Redirection](bash_note/2026-07-16_output_input_redirection.md)
 
 - ## Commands
    * [2026-02-23 Useful Commands](linux_basic_note/2026-02-23_useful_commands.md)
