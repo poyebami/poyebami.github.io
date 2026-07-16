@@ -54,4 +54,46 @@ Right now hello.txt has the "Hello world!" written in the file. But what happens
  ```
 In real world application, we use this with timestamps to see which command ran at which time and also gather some errors. 
 
+<h3>Input</h3>
+`<` is used to get input from a txt file. 
+ ```console
+ wc -w hello.txt
+ 6 hello.txt
+ 
+ $ # `<` redirect the content of hello.txt into wc's standard input.
+ $ # wc never see thge filename
+ wc -w < hello.txt
+ 6 
+ ```
+<h3>Input Part2</h3>
+`<<` is a heredoc (here document). Compare to `<` which redirect file's contents into a command, it lets you type multi-line input directly in your script/ terminal, ending when delimiter word is seen.
+ ```console
+ cat << EOF
+ > I will
+ > write some
+ > text
+ EOF
 
+ $ # output: I will
+ $ # output: write some
+ $ # output: text
+ ```
+<h3>Input Part3</h3>
+`<<<` is called herestring. It feeds a single string directly into a command's stdin.
+ ```console
+ wc - w <<< "Hello there wordcount!"
+ $ # output: 3
+ ```
+<h3>Combining</h3>
+We can write multi-line text into a file, without a text editor.
+Below we typing multi-line directly from our terminal without going into the text editor.
+ ```console
+ cat << EOF > hello.txt
+ >Hello there!
+ >This is a test file.
+ >EOF
+
+ cat hello.txt
+ $ # output: Hello there!
+ $ # output: This is a test file.
+ ```
