@@ -43,6 +43,7 @@
     * [2026-07-16 Output/Input Redirection](bash_note/2026-07-16_output_input_redirection.md)
     * [2026-07-17 Testing Operators](bash_note/2026-07-17_test_operators.md)
     * [2026-07-17 If/elif/else](bash_note/2026-07-17_if_elif_else.md)
+    * [2026-07-17 Case Statements](bash_note/2026-07-17_case_statement.md)
 
 - ## Commands
    * [2026-02-23 Useful Commands](linux_basic_note/2026-02-23_useful_commands.md)
