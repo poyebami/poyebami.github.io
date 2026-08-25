@@ -35,3 +35,17 @@ COPY *.json /app/
 $ # copying an entire directory
 COPY src/ /app/src/
  ```
+<h3>EXPOSE</h3>
+`EXPOSE` instruction in a Dockerfile functions primarily as documentation between the person who builds the image and the person who runs the container. It tells the person who uses the image which port they should use.
+ ```console
+ $ # tcp (transmission control protocol) establishes a formal connections before sending any data. It tracks every packet, checks for errors, and asks for sender to resent any missing pieces so that data arrvies in the correct.
+ $ # best used for web browsing email, and downloading files where missing or scrambled data would break the experience.
+ EXPOSE 80
+ 
+ $ # udp (user datagram protocol) is a connectionless protocol that prioritizes speed and efficiency over error correction. It acts as a "fire and forget" system. It blasts data packets (datagrams) straight to the receiver without setting up a connection or checking if they arrived safely.
+ $ # BEST used ofr real-time applications like live video streaming, online gaming, and voice calls, where a fast, continuous flow matters more than a dropped frama or two.
+ EXPOSE 53/udp
+ 
+ $ # exposing  multiple ports
+ EXPOSE 80 443
+ ```
