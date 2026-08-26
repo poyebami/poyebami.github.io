@@ -12,13 +12,15 @@ If the image is not present on the host, it will go out to Docker Hub and pull t
 Docker ps command lists all running containers and some basic information, such as the container ID, the name of the iamge we use to run the containers, the current status and the name of the container.
 Each containers automatically gets a random ID and name created for it by  Docker, which in this case is Silly Summit.
  ```console
- $ docker ps
+$ # docker ps command list all running containers
+$ docker ps
  
  CONTAINER ID       IMAGE       COMMAND                     CREATED             STATUS          PORTS       NAMES
  796856ac413d       nginx       "nginx -g 'damon of..."     7 seconds ago       Up 6 second     80/tcp      silly_sammet
  ```
 To see all containers running or not use the -a option and outputs all running as well as previosuly stopped or exited containers.
  ```console
+ $ # list all containers running or not
  $ docker ps -a 
  CONTAINER ID       IMAGE       COMMAND                     CREATED             STATUS                      NAMES
  796856ac413d       nginx       "nginx -g 'damon of..."     7 seconds ago       Up 6 second                 silly_sammet
@@ -27,6 +29,7 @@ To see all containers running or not use the -a option and outputs all running a
 <h3>Docker stop command</h3>
 To stop a running container use the Docker stop command, but must use either the container ID or the container name in the stop command.
  ```console
+ $ # to stop a running container
  $ docker stop silly_sammet
  silly_sammet
  ```
@@ -40,6 +43,7 @@ To check if the running container has stopped, use the command docker ps -a
 <h3>Docker remove command</h3>
 To remove a stopped or exited container permanently to the docker rm command with the container ID or the container name. It is prints the name back, it worked.
  ```console
+  $ # remove stopped or exited container permanently
   $ docker rm silly_sammet
   silly_sammet
  ```
@@ -48,6 +52,7 @@ To check if the container has been removed use the docker ps -a to confirm.
 <h3>Docker list command</h3>
 To see the list of available images and their size. Run the docker image command
  ```console
+  $ # list all available images and sizes
   $ docker images
   REPOSITORY        TAG         IMAGE ID            CREATED         SIZE
   nginx             latest      f68de55e065         4 days ago      109MG
@@ -58,6 +63,8 @@ To see the list of available images and their size. Run the docker image command
 <h3>Docker remove image command</h3>
 To remove an image that you no longer plan to use, run the docer rmi command
  ```console
+ $ # remove images that you are no longer planning to use
+ $ # make sure that no containers are running off it
  $ docker rmi nginx
  ```
 Make sure that no containers are running off of that image before removing the image; you must stop and delete all dependent containers to be able to delete an image.
@@ -66,6 +73,7 @@ Make sure that no containers are running off of that image before removing the i
 While `docker pull` will automatically pull an image if its missing from your local cache, `docker pull` is use to pre-download images without actually starting a container.
 Docker pull command downloads container images or repositories from a registry.
  ```console
+ $ # pull command is used to download containers images from a romote registry to your local machine
  $ docker pull nginx
  Using default tag: latest
  latest: Pulling from library/nginx
@@ -98,7 +106,7 @@ The Docker exec command to used to execute a command on the docker container.
  172.18.0.2     538d037f94a7
  ```
  <h3>Run -attach and detach</h3>
-When you run a Docker run command like this, it runs in the foreground or in an 'attached mode', meaning you will be attached to the console or the standard out of the Docker container. And you will see the output of the web service on the screen.  You won't be able to do anything else on this console other than view the output until the Docker container stops. It won't respond to your input. 
+When you run a Docker run command, it runs in the foreground or in an 'attached mode', meaning you will be attached to the console or the standard out of the Docker container. And you will see the output of the web service on the screen.  You won't be able to do anything else on this console other than view the output until the Docker container stops. It won't respond to your input. 
   ```console
   $ docker run kodekloud/simple-webapp
   This is a sample web application that displays a colored background.
