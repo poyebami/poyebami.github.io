@@ -13,6 +13,19 @@ To run a docker image in the background use `-d`
 When in detached mode, Docker will starts in the background and immediately give you back your terminal prompt, instead of attaching your terminal to the container's output.
 Without `-d`, the terminal would attach to the container, and you'd see nginx's log output live - but the terminal would be "stuck" running the container in the foreground until you stop it . `ctrl+C`
 
+<h3>Rename a docker container</h3>
+When running a image and you want to name use. Use the `--name` command.
+ ```console
+ $ # naming the container my_site
+ $ docker run -d --name my_site nginx
+ ```
+
+<h3>Mapping a docker container</h3>
+If you want to map a container to a specific port. Use -p
+ ```console
+ $ # mapping a container
+ $ docker run -d -p 8080:80 nginx
+ ```
 <h3>List all running container</h3>
   ```console
   $ # list all `running` containers
@@ -31,10 +44,16 @@ To stop a running container, use the docker `stop` command with the container ID
  $ # output: prints out the container ID
 
  $ # stop running container using Name
- $ docker stop beatiful_boyd
+ $ docker stop beautiful_boyd
  $ # output: prints out the container Name
  ```
- <h3>Delete and remove container</h3>
+<h3>Starting a container</h3>
+If you want to start a exited container. Use the docker start command
+ ```console
+ $ # start a exited container
+ $ docker start beautiful_boyd
+ ```
+<h3>Delete and remove container</h3>
  To remove containers, use the docker rm <image> (container ID or Name)
   ```console
   $ # remove one container
