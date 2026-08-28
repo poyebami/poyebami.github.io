@@ -46,6 +46,10 @@ To stop a running container, use the docker `stop` command with the container ID
  $ # stop running container using Name
  $ docker stop beautiful_boyd
  $ # output: prints out the container Name
+
+ $ # stop multiple running container with one command
+ $ docker stop $(docker ps -q)
+ $ # docker ps -q run first, outputting just the IDs of current running containers
  ```
 <h3>Starting a container</h3>
 If you want to start a exited container. Use the docker start command
@@ -65,6 +69,10 @@ If you want to start a exited container. Use the docker start command
   $ # output: af11
   $ # output: 8dd1
   $ # output: sdf1
+
+  $ # remover every container, running or not
+  $ docker rm $(docker ps -aq)
+  $ # docker ps -aq runs first, outputting the IDs of all contaienrs - running and stopped (-a = all, -q = quiet/IDs-only)
   ```
 <h3>Docker Images</h3>
 To list all docker images, use the docker images command
@@ -84,5 +92,8 @@ To check which image is being used, use the `docker ps` command. If is not a run
 
 <h3>Docker system prune</h3>
 Docker system prune cleans up unused docker data. It will remove all stopped containers. All unused networks (not used by at least one container). All dangling images (untagged images, usually leftovers build layers). All build cache.
-
+ ```console
+ $ docker system prune
+ ```
 It does not touch running containers, imagees that are still tagged and not dangling (unless you add -a) and volumes (unless you add --volume)
+
