@@ -1,0 +1,2 @@
+<h1>Containers</h1>
+Docker containers are isolated environments. They can have their own processes, network, and mounts, just like virtual machines. They all share the same operating system kernel. A container is lightweight and executable packages of software that includes everything needed to run an application - code, runtime, system tools, system libraries, and settings. It allows developers to bundle an application with its entire ecosystem so it run identifcally on any machine.
