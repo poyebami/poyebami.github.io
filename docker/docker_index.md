@@ -13,6 +13,7 @@
     * [2026-08-24 More info on DockerFile](docker_basic_note/2026-08-24_more_info_dockerfile.md)
     * [2026-08-26 Docker Commands Part 1](docker_basic_note/2026-08-26_more_docker_commands.md)
     * [2026-08-28 Containers](docker_basic_note/2026-08-28_containers.md)
+    * [2026-09-17 Docker Compose](docker_basic_note/2026-09-17_docker_compose.md)
 
 - ## Docker Project
     * [2026-09-16 Docker Challenge Data Playback](docker_basic_note/2026-09-16_docker_challenge_data_playback_service.md)
