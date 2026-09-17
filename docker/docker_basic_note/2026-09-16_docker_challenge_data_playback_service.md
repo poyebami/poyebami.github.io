@@ -120,3 +120,21 @@ ENTRYPOINT : sets the command that always runs when a containers starts from thi
  data_playback - the name of the package to run. Python looks for a folder named data_playback (found via WORKDIR), since that's where it was copied to) containing an __init__.py (marks its as package) and specifically looks for __main__.py inside it as the entry point to execute. 
 
  Pretty much says : "find the data_playback package, and run its __main__.py"
+
+<h1>Building the image</h1>
+ ```console
+ docker build -t data_playback .
+ ```
+ -t is used to name the image I'm building, so I can refer to it later instead of using its long random ID.
+
+<h1>Running the image</h1>
+  ```console
+  docker run --rm \
+  -v "/home/prosper/devops-challenge/data:/home/prosper/devops-challenge/data" \
+  -p 5555:5555 \
+  -e DATA_FILE=/home/prosper/devops-challenge/data/output.mp4 \
+  data_playback
+  ```
+  -p 5555:5555 : publishes port 5555 so the ZMQ publisher inside the container is reachable from outside
+
+  -e flag sets an environment variable inside the container. In our case, it sets a env var named `DATA_FILE` inside the container, with the value being the path to my mp4. Without -e DATA_File=..., the script would use its build-in default. /data/conus_20171021_20171022_30FPS.mp4. I'm not using it and instead using output.mp4 and its lives in a different path. 
