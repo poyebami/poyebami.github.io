@@ -124,8 +124,11 @@ ENTRYPOINT : sets the command that always runs when a containers starts from thi
 <h1>Building the image</h1>
  ```console
  docker build -t data_playback .
+
+ docker build -f data_playback/Dockerfile -t data_playback . 
  ```
  -t is used to name the image I'm building, so I can refer to it later instead of using its long random ID.
+ -f points at whereever the Dockerfile actually is.
 
 <h1>Running the image</h1>
   ```console
