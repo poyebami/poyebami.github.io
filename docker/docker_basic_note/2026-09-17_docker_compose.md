@@ -44,6 +44,18 @@ services:
       - PLAYBACK_HOST=data_playback
       - PLAYBACK_PORT=5555
 ```
+`Depends_on` : tell compose "this service relies on another service. In our case, `data_redactor` relies on `data_playback.` 
+You can also list multiply services. 
+ ```console
+ depends_on:
+    - data_playback
+    - some_other_service
+ ```
+ 
+`Volume`: is used to share/link a folder (or file) between your hosr machine and the container's filesystem.
+
+This is needed because the containers are isolated.  With -v or volume, the python scripts tries to read /data/output.mp4 but the path wouldn't exist inside the container and will fail because __output.mp4__ has failed. The volume mount makes your host's data/ folder appears inside the container at the path you specify, so the scripts can find and read the file. 
+In our case, -v/ volume will let data_playback (running inside its isloated container) actually access the output.mp4 file. 
 <h3>Build</h3>
 Build the image from the Dockerfile in the current directory.
 
