@@ -1,4 +1,4 @@
-<h1>Docker Challenger: Data Redactor Service </h1>
+<h1>Docker Challenge: Data Redactor Service </h1>
 The point of this container is to redacts the outer frame of image from data playback. Then it publishes that data on  a new ZeroMQ socket.
 
 I stared with creating a Dockerfile.
