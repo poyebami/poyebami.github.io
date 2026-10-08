@@ -37,6 +37,7 @@
    * [2026-05-13 Giving a user access to a server using ssh](bash_note/2026-05-13_giving_a_user_access_ssh.md)
    * [2026-05-15 Configuring an SSH Config File](bash_note/2026-05-15_ssh_config_file.md)
    * [2026-09-14 Adding SSH to a machine](bash_note/2026-09-14_adding_ssh.md)
+   * [2026-10-07 Copy Files from local to SSH](bash_note/2026-10-07_copying_files_local_to_ssh.md)
  
     - <h3> Script in Bash</h3>
     * [2026-07-14 First Bash Script](bash_note/2026-07-14_first_bash_script.md)  
