@@ -16,6 +16,6 @@
     * [2026-09-17 Docker Compose](docker_basic_note/2026-09-17_docker_compose.md)
 
 - ## Docker Project
-    *
+    * [2026-10-26 Copy Requirements](docker_basic_note/2026-10-26_COPY_install_packages_Dockerfile.md)
 
 
