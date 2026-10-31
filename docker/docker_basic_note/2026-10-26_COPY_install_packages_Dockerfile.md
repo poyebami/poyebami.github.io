@@ -16,15 +16,15 @@ Look for "installations", "prerequisites", or "requirements" sections. They ofte
 
 3. Existing build and setup scripts
 Look at Makefile, setup.sh, install.sh, docker-compose.yml, CI congifs (.github/workflows/*.yml).* 
-CI files are useful because they shows what a clean machine needs to build and run the project. 
+    CI files are useful because they shows what a clean machine needs to build and run the project. 
 
-CI (Continuous Integration Configuration File) is a text file placed in a software project's repository that automates how code is built, tested, and validated.
+    CI (Continuous Integration Configuration File) is a text file placed in a software project's repository that automates how code is built, tested, and validated.
 
-CI (such as .gitlab-ci.yml) or workflow file in GitHub Actions) tells an automation server what steps to execute whenever a dev pushes new code. 
+    CI (such as .gitlab-ci.yml) or workflow file in GitHub Actions) tells an automation server what steps to execute whenever a dev pushes new code. 
 
-It defines stages like building, running unit tests, linting, and packaging (such as creating a Docker container).
+    It defines stages like building, running unit tests, linting, and packaging (such as creating a Docker container).
 
-When you push code to a repo, the CI/CD platform reads the file and runs the defined job automatically. If the test fails, the pipeline stops and alerts the team.
+    When you push code to a repo, the CI/CD platform reads the file and runs the defined job automatically. If the test fails, the pipeline stops and alerts the team.
 
 4. Read the imports in the source code
 If there's no manifest, scan the code for import / require/ #include lines. Anything that isn't part of the standard library is something that needs to be installed.
@@ -50,6 +50,7 @@ Some Python or Node packages wrap C libraries and need system packages first. Th
 7. Look at the environment that project was built on
 If the project works on someone's machine, pip freeze, pip list, or apt list --installed there shows what's installed. This is often a last resort.
 
+<h1>Installing the Packages</h1>
 
 ```console
  COPY requirements.txt .
