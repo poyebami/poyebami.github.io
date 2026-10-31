@@ -53,9 +53,20 @@ Some Python or Node packages wrap C libraries and need system packages first. Th
 If the project works on someone's machine, pip freeze, pip list, or apt list --installed there shows what's installed. This is often a last resort.
 
 <h1>Installing the Packages</h1>
-
+During the repo-viewer project, there is a requirements.txt file in the prject file. I need to copy the requirement.txt file into the filesystem of the Docker image.
 ```console
  COPY requirements.txt .
  RUN pip install --no-cache-dir -r requirements.txt
  ```
+ In the example above, the dockerfile copies the requirements.txt into the Docker image and then installs the packages requried in txt file without saving the temporary download files once the installation is complete. 
+
+-r stands for requirements (short for --requirement). It tells pip to read the list of packages to install from a file, rather than from the command line.
+
+```console
+$ # install one pacakge by name
+pip install requests
+
+$ # install everything listed in a file
+pip install -r requirements.txt
+```
 
