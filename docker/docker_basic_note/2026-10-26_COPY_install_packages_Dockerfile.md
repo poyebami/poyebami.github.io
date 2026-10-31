@@ -44,6 +44,7 @@ Build the image and run the app; errors tell you what's missing.
     error while loading shared libraries: libXYZ.so: a system library is missing (install it with apt-get)
 
     Compiler errors during *pip install*: you often need build tools like gcc or -dev headers
+    curl: not found / git: not found: a command-line tool is missing from the image
     ```
 
 6. Check what the dependencies themselves need
@@ -70,3 +71,9 @@ $ # install everything listed in a file
 pip install -r requirements.txt
 ```
 
+If the iamge require system packages that the base image doesn't already have. You can install them in the Dockerfile using the RUN command.
+
+```console
+RUN apt-get update && apt-get install -y --no-install-recommends \ libgl1 \ libglib2.0-0 \ && rm -rf /var/lib/apt/lists/*
+```
+This (apt-get updates) refreshes the list of available packages, (apt-get install -y) installs packages, and (-y) auto-confirms the prompt, since nobody can type an answer during a build. (--no-install-recommands) skips optional "recommanded" packages that apt would otherwise pull in. Ths keeps the image small.
