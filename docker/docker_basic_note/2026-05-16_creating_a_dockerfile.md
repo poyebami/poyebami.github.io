@@ -51,6 +51,22 @@ Entrypoint is a dockerfile instruction that sets the fixed command that always r
  ENTRYPOINT ["curl", "-L"]
  $ Every time you run a container from this image. Docker execute curl -L first, then appends whatever arguments you pass at the end of your docker run command.
  ```
+<h3>CMD</h3>
+CMD is a command that container runs on start. It works as written becuase (WORKDIR) is where (app.py) lives.
+
+A Dockerfile has two phases: build time and run time.
+
+Build time: (RUN) executes commands while the iamge is being built (installing packages, for example). The results are baked into the image.
+
+RUN time: (CMD) does nothing during the build. It's stores in the iamge as an instruction for what to do when someone runs (docker run).
+
+Without (CMD), a container has nothing to run and exit right away. The (python:3-12-slim) base images's default is just the Python interpreter, which exits immediately when there's no script and no terminal attached.
+
+```console
+ CMD ["executable", "param1", "param2"]
+ # EXAMPLE
+ CMD ["python", "app.py"]
+```
 <h3>Conclusion</h3>
 Once you are finished with create your DockerFile, use the command `docker build` to turn it into a usable image.
  ```console
