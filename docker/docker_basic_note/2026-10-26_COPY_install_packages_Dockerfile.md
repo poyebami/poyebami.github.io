@@ -29,21 +29,23 @@ Look at Makefile, setup.sh, install.sh, docker-compose.yml, CI congifs (.github/
 4. Read the imports in the source code
 If there's no manifest, scan the code for import / require/ #include lines. Anything that isn't part of the standard library is something that needs to be installed.
 
-EXAMPLE
-```console
-During the repo-viewer project, if there are not requirements.txt file, I will check the .py file, (source code) and locate *import* to see the required packages. I need to install. In my case, it was Requests, and Flask. 
-```
+    EXAMPLE
+   ```console
+    During the repo-viewer project, if there are not requirements.txt file, I will check the .py file, (source code) and locate *import* to see the required packages. I need to install. In my case, it was Requests, and Flask. 
+    ```
+
 5. Just try it and read the errors.
 Build the image and run the app; errors tell you what's missing.
-```console
-ModuleNotFoundError / Cannot find module: a language packages is missing
+    ```console
+    ModuleNotFoundError / Cannot find module: a language packages is missing
 
-command not found: a system tool is missing
+    command not found: a system tool is missing
 
-error while loading shared libraries: libXYZ.so: a system library is missing (install it with apt-get)
+    error while loading shared libraries: libXYZ.so: a system library is missing (install it with apt-get)
 
-Compiler errors during *pip install*: you often need build tools like gcc or -dev headers
-```
+    Compiler errors during *pip install*: you often need build tools like gcc or -dev headers
+    ```
+
 6. Check what the dependencies themselves need
 Some Python or Node packages wrap C libraries and need system packages first. The package's PyPI/npm pages or docs usually list (for example, pyzmq can often install from a wheel, but some packages need libzmq-dev).
 
