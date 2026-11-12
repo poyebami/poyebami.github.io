@@ -4,6 +4,9 @@
 ## Linux
    * [Linux Basic](linux/linux_basic_index.md)
 
+## CI/CD
+   * [CI/CD](CICD/CICD_index.md)
+
 ## Kubernetes
    * [Kubernetes](Kubernetes/Kubernetes_index.md)
 
