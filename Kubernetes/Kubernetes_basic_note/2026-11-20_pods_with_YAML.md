@@ -54,3 +54,8 @@ spec:
         - name: nginx-container
           image: nginx
 ```
+<h3>Create</h3>
+Once the file is created, run the command kubectl create -f followed by the file name.
+```console
+kubectl create -f pod-definition.yml
+```
