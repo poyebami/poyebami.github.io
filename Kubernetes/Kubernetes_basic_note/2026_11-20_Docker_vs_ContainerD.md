@@ -5,7 +5,7 @@ Unlike Docker, Containerd's scripe is limited: it manages core container lifecyc
 Docker is a comprehensive containerization platform. It covers runtime, orchestration, networking, and etc. 
 
 <h3>ContainerD</h3>
-ContainerD is a lightweight container runtime. It uses cases is customizable container runtime for integration. 
+ContainerD is a lightweight container runtime on its own separate from Docker. It uses cases is customizable container runtime for integration. 
 
 ctr: a debugging - oriented utility included with ContainerD that is used mainly for troubleshooting. 
 
