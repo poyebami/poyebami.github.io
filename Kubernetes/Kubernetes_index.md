@@ -5,4 +5,4 @@
     * [2026-11-20 Docker vs ContainerD](Kubernetes_basic_note/2026-11-20_Docker_vs_ContainerD.md)
     * [2026-11-20 etcd for beginner](Kubernetes_basic_note/2026-11-20_etcd_for_beginners.md)
     * [2026-11-20 Pods](Kubernetes_basic_note/2026-11-20_pods.md)
-    * [2026-11-20 Pods with YAML](Kubernetes_basic_note/2026-11-20_pods_with_YAML.md)
+    * [2026-11-20 Pods Commands](Kubernetes_basic_note/2026-11-20_pods_commands.md)
