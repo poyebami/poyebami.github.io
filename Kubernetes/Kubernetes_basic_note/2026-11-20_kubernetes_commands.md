@@ -2,6 +2,9 @@
 
 <h3>Pods commands</h3>
 ```console
+$ # create pods
+kubectl create -f <name_of_pod>.yaml
+
 $ # list pods
 kubectl get pods
 
