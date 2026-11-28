@@ -18,7 +18,7 @@ kubectl describe pods myapp-pod
 $# delete pod
 kubectl delete pod myapp-pod
 
-# create or updates cluster resources from YAML or JSON files
+$# create or updates cluster resources from YAML or JSON files
 kubectl apply -f redis-pod.yaml
 ```
 
@@ -41,7 +41,4 @@ Using bare `--dry-run` was deprecated and later removed.
 $ # generates the pods as a YAML and sends the output into a file
 kubectl run redis --image=redis --dry-run=client -o yaml > redis-pod.yaml
 $ # after cat the file to check the information and then use kubectl to create the file. 
-```
-```console
-$ # -o yaml
 ```
