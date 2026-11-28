@@ -18,7 +18,7 @@ kubectl describe pods myapp-pod
 $# delete pod
 kubectl delete pod myapp-pod
 
-$# create or updates cluster resources from YAML or JSON files
+# create or updates cluster resources from YAML or JSON files
 kubectl apply -f redis-pod.yaml
 ```
 
